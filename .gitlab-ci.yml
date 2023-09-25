@@ -1,0 +1,14 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+      - apk add openjdk17 python3
+      - cp -r /shared/* .
+      - python3 build.py
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+
