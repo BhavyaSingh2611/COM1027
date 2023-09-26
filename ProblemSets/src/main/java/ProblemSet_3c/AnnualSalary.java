@@ -1,4 +1,4 @@
-package ProblemSet_3b;
+package ProblemSet_3c;
 
 public class AnnualSalary {
     private double salary = 0.0;
@@ -10,7 +10,7 @@ public class AnnualSalary {
             if (salary <= 50270){
                 tax += (salary - PERSONAL_ALLOWANCE) * 0.2; /* 20% tax on the remaining salary*/
             } else {
-                tax += (50270 - 12750) * 0.2; /* 20% tax upto 50270 */
+                tax += (50270 - 12751) * 0.2; /* 20% tax upto 50270 */
 
                 if (salary <= 125140){
                     tax += (salary - 50270) * 0.4; /* 40% tax on the remaining salary*/

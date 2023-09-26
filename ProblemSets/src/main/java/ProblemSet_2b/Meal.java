@@ -9,11 +9,12 @@ public class Meal {
         this.dessert = dessert;
     }
 
-    public double calculateTotalSugarLevel(){
+    public double calculateTotalSugarLevel() {
         return mainCourse.getAmountOfSugar() + dessert.getAmountOfSugar();
     }
 
-    public String toString(){
-        return "Meal [mainCourse = " + mainCourse.getName() + ", dessert = " + dessert.getName()+"]";
+    public String toString() {
+        return "Meal [mainCourse = " + mainCourse.getName() +
+                ", dessert = " + dessert.getName() + "]";
     }
 }
