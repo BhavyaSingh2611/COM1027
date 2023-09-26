@@ -14,8 +14,8 @@ public class Module {
     }
 
     public double calculateAverage() {
-        return ((assessment1.getMark() + assessment2.getMark()) * 0.2 +
-                assessment3.getMark() * 0.6);
+        return ((assessment1.getMark() + assessment2.getMark()) * 0.2
+                + assessment3.getMark() * 0.6);
     }
 
     public String toString() {

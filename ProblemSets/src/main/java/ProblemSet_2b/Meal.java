@@ -14,7 +14,7 @@ public class Meal {
     }
 
     public String toString() {
-        return "Meal [mainCourse = " + mainCourse.getName() +
-                ", dessert = " + dessert.getName() + "]";
+        return "Meal [mainCourse = " + mainCourse.getName()
+                + ", dessert = " + dessert.getName() + "]";
     }
 }
