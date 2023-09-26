@@ -15,6 +15,7 @@
     <suppress files="." checks="DesignForExtension"/>
     <suppress files="." checks="HiddenField"/>
     <suppress files="." checks="FinalParameters"/>
+    <suppress files="." checks="MemberName"/>
 
     <!-- Permit ProblemSet_Xy package names for readability. -->
     <suppress files="." checks="PackageName"/>
