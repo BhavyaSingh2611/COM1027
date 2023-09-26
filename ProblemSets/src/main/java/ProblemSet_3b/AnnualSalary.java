@@ -11,6 +11,13 @@ public class AnnualSalary {
                 tax += (salary - PERSONAL_ALLOWANCE) * 0.2; /* 20% tax on the remaining salary*/
             } else {
                 tax += (50270 - 12751) * 0.2; /* 20% tax upto 50270 */
+
+                if (salary <= 125140){
+                    tax += (salary - 50270) * 0.4; /* 40% tax on the remaining salary*/
+                } else {
+                    tax += (125140 - 50270) * 0.4; /* 40% tax upto 125140 */
+                    tax += (salary - 125140) * 0.45; /* 45% tax above 125140 */
+                }
             }
         }
 
