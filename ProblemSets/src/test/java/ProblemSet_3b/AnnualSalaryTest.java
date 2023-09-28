@@ -102,8 +102,8 @@ public class AnnualSalaryTest {
 
 	// No tax should be paid.
 	salary.setSalary(1000);
-    }
     assertEquals(0, salary.calculateTax(), 0);
+    }
 
     /**
      * Test that the basic allowance is taken into account when calculating tax.
