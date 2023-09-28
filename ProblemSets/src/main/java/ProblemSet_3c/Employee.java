@@ -7,7 +7,9 @@ public class Employee {
     private AnnualSalary salary = null;
     private Position companyPosition = null;
 
-    public Employee(int id, String forename, String surname, AnnualSalary salary, Position companyPosition) {
+    public Employee(int id, String forename, 
+    		String surname, AnnualSalary salary, 
+    		Position companyPosition) {
         this.id = id;
         this.forename = forename;
         this.surname = surname;
@@ -35,15 +37,15 @@ public class Employee {
         return companyPosition.getRoleName();
     }
 
-    public void displayEmployeeName(){
+    public void displayEmployeeName() {
         System.out.println(forename + " " + surname);
     }
 
-    private boolean eligibleForBonus(){
+    private boolean eligibleForBonus() {
         return (salary.getSalary() > 40000);
     }
 
-    public String toString(){
+    public String toString() {
         String bonus = eligibleForBonus() ? "" : "not ";
         return surname + ", " + forename + " (" + id + "): "
                 + getPositionName() + " at �" + salary.getSalary()
