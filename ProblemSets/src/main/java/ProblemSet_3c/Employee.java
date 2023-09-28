@@ -7,8 +7,8 @@ public class Employee {
     private AnnualSalary salary = null;
     private Position companyPosition = null;
 
-    public Employee(int id, String forename, 
-    		String surname, AnnualSalary salary, 
+    public Employee(int id, String forename,
+    		String surname, AnnualSalary salary,
     		Position companyPosition) {
         this.id = id;
         this.forename = forename;
