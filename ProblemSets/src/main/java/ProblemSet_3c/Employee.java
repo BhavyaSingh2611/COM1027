@@ -40,12 +40,12 @@ public class Employee {
     }
 
     private boolean eligibleForBonus(){
-        return  false;
+        return (salary.getSalary() > 40000);
     }
 
     public String toString(){
         String bonus = eligibleForBonus() ? "" : "not ";
-        return surname + ", " + forename + "(" + id + ") "
+        return surname + ", " + forename + " (" + id + "): "
                 + getPositionName() + " at �" + salary.getSalary()
                 + " (�" + salary.calculateTax() + " tax) and is "
                 + bonus + "eligible for bonus.";
