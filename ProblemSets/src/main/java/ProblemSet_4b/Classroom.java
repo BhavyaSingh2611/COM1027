@@ -11,16 +11,17 @@ public class Classroom {
 		this.room = room;
 		this.maxStudents = Arrays.copyOf(maxStudents, CAPACITY);
 	}
-	
+
 	public void addStudents(int index, char initial, String surname) {
 		maxStudents[index] = new Student(initial, surname);
 	}
-	
+
 	public String getSummary() {
 		String toReturn = "";
-		for(int i = 0; i < maxStudents.length; i++) {
-			if(maxStudents[i] != null) {
-				toReturn += maxStudents[i].getStudentDetails() + "\n";
+		for (int i = 0; i < maxStudents.length; i++) {
+			if (maxStudents[i] != null) {
+				toReturn += maxStudents[i].getStudentDetails()
+				+ "\n";
 			}
 		}
 		if (toReturn == "") {
@@ -28,21 +29,21 @@ public class Classroom {
 		}
 		return toReturn;
 	}
-	
+
 	public int howManyStudents() {
 		int numStudents = 0;
-		for(int i = 0; i < maxStudents.length; i++) {
-			if(maxStudents[i] != null) {
+		for (int i = 0; i < maxStudents.length; i++) {
+			if (maxStudents[i] != null) {
 				numStudents++;
 			}
 		}
 		return numStudents;
 	}
-	
+
 	public String getRoom() {
 		return room;
 	}
-	
+
 	public int getCapacity() {
 		return CAPACITY;
 	}
