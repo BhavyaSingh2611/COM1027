@@ -1,12 +1,14 @@
 package ProblemSet_4a;
 
+import java.util.Arrays;
+
 public class Day {
 	private String name = "";
-	private Session[] sessions =
-		{null, null, null, null, null, null, null};
+	private Session[] sessions = {};
 
 	public Day(String name) {
 		this.name = name;
+		this.sessions = Arrays.copyOf(sessions, 7);
 	}
 
 	public void setSession(int index, String moduleName,
