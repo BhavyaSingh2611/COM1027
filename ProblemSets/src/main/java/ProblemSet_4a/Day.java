@@ -2,7 +2,7 @@ package ProblemSet_4a;
 
 public class Day {
 	private String name = "";
-	private Session[] sessions = 
+	private Session[] sessions =
 		{null, null, null, null, null, null, null};
 
 	public Day(String name) {
@@ -26,14 +26,15 @@ public class Day {
 	public String toString() {
 		String toReturn = "";
 		for (int i = 0; i < sessions.length; i++) {
-			if(sessions[i] != null) {
+			if (sessions[i] != null) {
 				toReturn += sessions[i].getSessionName()
-						+ ": " + sessions[i].getStartTime()
-						+ " - " + sessions[i].getEndTime()
+						+ ": "
+						+ sessions[i].getStartTime()
+						+ " - "
+						+ sessions[i].getEndTime()
 						+ "\n";
+				}
 			}
-		}
 		return toReturn;
 	}
-
 }
