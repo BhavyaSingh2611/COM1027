@@ -2,12 +2,11 @@ package ProblemSet_5c;
 
 public class Pizza {
 	private String[] toppings = {};
-	
-	
+
 	public void addToppings(String[] addToppings) {
 		this.toppings = addToppings;
 	}
-	
+
 	public String printToppings() {
 		return String.join(",", toppings);
 	}
@@ -44,6 +43,9 @@ public class Pizza {
 			break;
 		  case 10:
 			cost = 14.99;
+			break;
+		  default:
+			cost = 0;
 			break;
 		}
 		return cost;

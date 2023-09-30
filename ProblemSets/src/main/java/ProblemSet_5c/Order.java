@@ -21,7 +21,6 @@ public class Order {
 	public void addPizza(Pizza pizza) {
 		pizzas.add(pizza);
 	}
-	
 
 	public String printReceipt() {
 		return "Customer: " + customer.toString() + "\n"
