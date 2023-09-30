@@ -1,15 +1,11 @@
 package ProblemSet_5c;
 
-import java.util.ArrayList;
-
 public class Pizza {
-	private ArrayList<String> toppings = new ArrayList<String>();
+	private String[] toppings = {};
 	
 	
 	public void addToppings(String[] addToppings) {
-		for (int i = 0; i < addToppings.length; i++) {
-			this.toppings.add(addToppings[i]);
-		}
+		this.toppings = addToppings;
 	}
 	
 	public String printToppings() {
@@ -18,7 +14,7 @@ public class Pizza {
 
 	public double calculateCost() {
 		double cost = 0;
-		switch (toppings.size()) {
+		switch (toppings.length) {
 		  case 1:
 		    cost = 9.99;
 		    break;
