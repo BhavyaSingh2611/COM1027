@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class RainfallYear {
 	private int year = 0;
 	private double[] rainfallMonths = {};
-	
+
 	public RainfallYear(int year) {
 		this.year = year;
 		this.rainfallMonths = Arrays.copyOf(rainfallMonths, 12);
@@ -42,8 +42,6 @@ public class RainfallYear {
 	    months.put("OCTOBER", 9);
 	    months.put("NOVEMBER", 10);
 	    months.put("DECEMBER", 11);
-	    
-	    
 		return rainfallMonths[months.get(month)];
 	}
 
