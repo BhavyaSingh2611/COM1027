@@ -1,7 +1,6 @@
 package ProblemSet_2b;
 
 public class Meal {
-
     private Food mainCourse = null;
     private Food dessert = null;
     public Meal(Food mainCourse, Food dessert) {
