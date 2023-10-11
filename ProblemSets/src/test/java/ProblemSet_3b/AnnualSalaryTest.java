@@ -49,7 +49,7 @@ public class AnnualSalaryTest {
 	// below the higher threshold.
 	AnnualSalary salary = new AnnualSalary();
 
-	// Tax should be paid at 20% on �12,571 and above.
+	// Tax should be paid at 20% on £12,571 and above.
 	salary.setSalary(12580);
 	assertEquals(2.0, salary.calculateTax(), 0);
 

@@ -24,7 +24,7 @@ public class GasBillTest {
     public void testAccountDetails() {
 	assertEquals(true, bill.checkAccountAccuracy(bill.getAccountNumber()));
 	assertEquals("Gas Bill\n" + " Account Number:G1234-5678-1234\n" + " Customer:A. Wonderland\n"
-		+ " Amount due:�100.00", bill.displayAccountDetails());
+		+ " Amount due:£100.00", bill.displayAccountDetails());
 
     }
 
@@ -33,7 +33,7 @@ public class GasBillTest {
 	bill = new GasBill("123456781234", 200, customer);
 	assertEquals(false, bill.checkAccountAccuracy(bill.getAccountNumber()));
 	assertEquals("Gas Bill\n" + " Account Number:Invalid Account\n" + " Customer:A. Wonderland\n"
-		+ " Amount due:�200.00", bill.displayAccountDetails());
+		+ " Amount due:£200.00", bill.displayAccountDetails());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class GasBillTest {
 	customer = new Customer("Dani", "Gu");
 	bill = new GasBill("G5555-7878-2245", 125.50, customer);
 	assertEquals(true, bill.checkAccountAccuracy(bill.getAccountNumber()));
-	assertEquals("Gas Bill\n" + " Account Number:G5555-7878-2245\n" + " Customer:D. Gu\n" + " Amount due:�125.50",
+	assertEquals("Gas Bill\n" + " Account Number:G5555-7878-2245\n" + " Customer:D. Gu\n" + " Amount due:£125.50",
 		bill.displayAccountDetails());
 
     }
@@ -59,7 +59,7 @@ public class GasBillTest {
 	bill = new GasBill("123456781234", 200, customer);
 	assertEquals(false, bill.checkAccountAccuracy(bill.getAccountNumber()));
 	assertEquals("Gas Bill\n" + " Account Number:Invalid Account\n" + " Customer:A. Wonderland\n"
-		+ " Amount due:�200.00", bill.displayAccountDetails());
+		+ " Amount due:£200.00", bill.displayAccountDetails());
     }
 
 }

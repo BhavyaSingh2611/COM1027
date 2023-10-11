@@ -69,7 +69,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(1234, "Sid", "James", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("James, Sid (1234): Director at �100000.0 (�27432.0 tax) and is eligible for bonus.",
+	assertEquals("James, Sid (1234): Director at £100000.0 (£27432.0 tax) and is eligible for bonus.",
 		employee.toString());
     }
 
@@ -88,7 +88,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(1234, "Stella", "Kazamia", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Kazamia, Stella (1234): Senior Lecturer at �126500.0 (�38100.0 tax) and is eligible for bonus.",
+	assertEquals("Kazamia, Stella (1234): Senior Lecturer at £126500.0 (£38100.0 tax) and is eligible for bonus.",
 		employee.toString());
     }
 
@@ -107,7 +107,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(5678, "Joe", "Bloggs", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Bloggs, Joe (5678): Sales Person at �39999.0 (�5485.8 tax) and is not eligible for bonus.",
+	assertEquals("Bloggs, Joe (5678): Sales Person at £39999.0 (£5485.8 tax) and is not eligible for bonus.",
 		employee.toString());
     }
 
@@ -126,7 +126,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(5678, "Alice", "Wonderland", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Wonderland, Alice (5678): Teacher at �33000.0 (�4086.0 tax) and is not eligible for bonus.",
+	assertEquals("Wonderland, Alice (5678): Teacher at £33000.0 (£4086.0 tax) and is not eligible for bonus.",
 		employee.toString());
     }
 
@@ -145,7 +145,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(5678, "Joe", "Bloggs", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Bloggs, Joe (5678): Teacher at �17000.0 (�886.0 tax) and is not eligible for bonus.",
+	assertEquals("Bloggs, Joe (5678): Teacher at £17000.0 (£886.0 tax) and is not eligible for bonus.",
 		employee.toString());
     }
 
@@ -164,7 +164,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(5678, "Bob", "Ross", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Ross, Bob (5678): Volunteer Painter at �0.0 (�0.0 tax) and is not eligible for bonus.",
+	assertEquals("Ross, Bob (5678): Volunteer Painter at £0.0 (£0.0 tax) and is not eligible for bonus.",
 		employee.toString());
     }
 
@@ -183,7 +183,7 @@ public class EmployeeTest {
 	Employee employee = new Employee(5678, "Alice", "Ross", salary, companyPosition);
 
 	// Test the string of of the correct format - this is precise.
-	assertEquals("Ross, Alice (5678): Cashier at �10000.0 (�0.0 tax) and is not eligible for bonus.",
+	assertEquals("Ross, Alice (5678): Cashier at £10000.0 (£0.0 tax) and is not eligible for bonus.",
 		employee.toString());
     }
 }

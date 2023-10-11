@@ -58,6 +58,6 @@ public class GasBill {
 
 	public String displayAmountDue() {
 		// https://tinyurl.com/2decimal
-		return "Amount due:�" + String.format("%.2f", amount);
+		return "Amount due:£" + String.format("%.2f", amount);
 	}
 }

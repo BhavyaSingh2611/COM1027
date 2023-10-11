@@ -48,8 +48,8 @@ public class Employee {
     public String toString() {
         String bonus = eligibleForBonus() ? "" : "not ";
         return surname + ", " + forename + " (" + id + "): "
-                + getPositionName() + " at �" + salary.getSalary()
-                + " (�" + salary.calculateTax() + " tax) and is "
+                + getPositionName() + " at £" + salary.getSalary()
+                + " (£" + salary.calculateTax() + " tax) and is "
                 + bonus + "eligible for bonus.";
     }
 }
