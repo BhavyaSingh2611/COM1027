@@ -15,11 +15,11 @@ public class AnnualSalary {
         /*
          * Constants for calculating the tax
          * */
-        final double TIER1 = 50270;
-        final double TIER1_PERCENTAGE = 0.2;
-        final double TIER2 = 125140;
-        final double TIER2_PERCENTAGE = 0.4;
-        final double TIER3_PERCENTAGE = 0.45;
+        double TIER1 = 50270;
+        double TIER1_PERCENTAGE = 0.2;
+        double TIER2 = 125140;
+        double TIER2_PERCENTAGE = 0.4;
+        double TIER3_PERCENTAGE = 0.45;
 
         if (salary > PERSONAL_ALLOWANCE && salary <= TIER1) {
             tax += (salary - PERSONAL_ALLOWANCE) * TIER1_PERCENTAGE;
