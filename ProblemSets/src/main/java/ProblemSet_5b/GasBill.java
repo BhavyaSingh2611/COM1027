@@ -36,8 +36,10 @@ public class GasBill {
 	}
 
 	public String displayAccountDetails() {
-		return String.format("Gas Bill\n Account Number:%s\n Customer:%s\n %s",
-				this.accountNumber, this.getCustomer(), this.displayAmountDue());
+		return String.format("Gas Bill\n Account Number:"
+						+ "%s\n Customer:%s\n %s",
+				this.accountNumber, this.getCustomer(),
+				this.displayAmountDue());
 	}
 
 	public String displayAmountDue() {

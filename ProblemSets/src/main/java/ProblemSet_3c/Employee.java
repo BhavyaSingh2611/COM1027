@@ -49,7 +49,8 @@ public class Employee {
     public String toString() {
         String bonus = this.eligibleForBonus() ? "" : " not";
 
-        return String.format("%s, %s (%d): %s at £%.1f (£%.1f tax) and is%s eligible for bonus.",
+        return String.format("%s, %s (%d): %s at £%.1f (£%.1f tax) "
+                        + "and is%s eligible for bonus.",
                 this.surname, this.forename, this.id, this.getPositionName(),
                 this.salary.getSalary(), this.salary.calculateTax(), bonus);
     }

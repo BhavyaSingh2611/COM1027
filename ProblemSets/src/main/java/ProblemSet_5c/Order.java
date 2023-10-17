@@ -24,8 +24,10 @@ public class Order {
 	}
 
 	public String printReceipt() {
-		return String.format("Customer: %s\nNumber of Pizzas: %d\nTotal Cost: %.2f",
-				this.customer.toString(), this.pizzas.size(), this.calculateTotal());
+		return String.format("Customer: %s\nNumber of Pizzas:"
+						+ " %d\nTotal Cost: %.2f",
+				this.customer.toString(), this.pizzas.size(),
+				this.calculateTotal());
 	}
 
 }

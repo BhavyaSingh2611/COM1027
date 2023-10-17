@@ -29,7 +29,7 @@ public class Day {
 		String toReturn = "";
         for (Session session : this.sessions) {
             if (session != null) {
-				toReturn += String.format("%s: %d - %d",
+				toReturn += String.format("%s: %d - %d\n",
 						session.getSessionName(),
 						session.getStartTime(),
 						session.getEndTime());

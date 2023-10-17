@@ -41,7 +41,8 @@ public class Student {
             toReturn += module.getCode() + ": "
                     + module.getAverage() + "\n";
         }
-		toReturn += "Year Average: " + this.calculateYearAverage() + "%";
+		toReturn += "Year Average: "
+				+ this.calculateYearAverage() + "%";
 		return toReturn;
 	}
 }

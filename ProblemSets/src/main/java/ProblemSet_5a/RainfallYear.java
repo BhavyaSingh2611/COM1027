@@ -44,7 +44,7 @@ public class RainfallYear {
 	    months.put("DECEMBER", 11);
 		return rainfallMonths[months.get(month)];*/
 
-        return switch (month) {
+        int index = switch (month) {
             case "JANUARY" -> 0;
             case "FEBRUARY" -> 1;
             case "MARCH" -> 2;
@@ -59,6 +59,7 @@ public class RainfallYear {
             case "DECEMBER" -> 11;
             default -> -1;
         };
+        return rainfallMonths[index];
 	}
 
 	public double calculateHighestRainfall() {

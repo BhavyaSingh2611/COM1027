@@ -1,7 +1,7 @@
 package ProblemSet_2c;
 
 public class Module {
-    private final static String NAME = "COM1027";
+    private static final String NAME = "COM1027";
     private Assessment assessment1;
     private Assessment assessment2;
     private Assessment assessment3;
