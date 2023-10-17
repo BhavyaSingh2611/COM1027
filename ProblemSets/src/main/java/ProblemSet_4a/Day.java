@@ -1,42 +1,40 @@
 package ProblemSet_4a;
 
-import java.util.Arrays;
-
 public class Day {
-	private String name = "";
-	private Session[] sessions = {};
+	private String name;
+	private Session[] sessions;
 
 	public Day(String name) {
+		super();
 		this.name = name;
-		this.sessions = Arrays.copyOf(sessions, 7);
+		this.sessions = new Session[4];
 	}
 
 	public void setSession(int index, String moduleName,
 			int startTime, int endTime) {
-		sessions[index] = new Session(moduleName,
+		this.sessions[index] = new Session(moduleName,
 				startTime, endTime);
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public Session getSessions(int i) {
-		return sessions[i];
+		return this.sessions[i];
 	}
 
+	@Override
 	public String toString() {
 		String toReturn = "";
-		for (int i = 0; i < sessions.length; i++) {
-			if (sessions[i] != null) {
-				toReturn += sessions[i].getSessionName()
-						+ ": "
-						+ sessions[i].getStartTime()
-						+ " - "
-						+ sessions[i].getEndTime()
-						+ "\n";
-				}
-			}
+        for (Session session : this.sessions) {
+            if (session != null) {
+				toReturn += String.format("%s: %d - %d",
+						session.getSessionName(),
+						session.getStartTime(),
+						session.getEndTime());
+            }
+        }
 		return toReturn;
 	}
 }

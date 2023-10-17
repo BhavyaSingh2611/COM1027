@@ -1,15 +1,16 @@
 package ProblemSet_3c;
 
 public class Employee {
-    private int id = 0;
-    private String forename = "";
-    private String surname = "";
-    private AnnualSalary salary = null;
-    private Position companyPosition = null;
+    private int id;
+    private String forename;
+    private String surname;
+    private AnnualSalary salary;
+    private Position companyPosition;
 
     public Employee(int id, String forename,
     		String surname, AnnualSalary salary,
     		Position companyPosition) {
+        super();
         this.id = id;
         this.forename = forename;
         this.surname = surname;
@@ -18,38 +19,38 @@ public class Employee {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getForename() {
-        return forename;
+        return this.forename;
     }
 
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
 
-    public int getSalary() {
-        return (int) salary.getSalary();
+    public double getSalary() {
+        return this.salary.getSalary();
     }
 
     public String getPositionName() {
-        return companyPosition.getRoleName();
+        return this.companyPosition.getRoleName();
     }
 
     public void displayEmployeeName() {
-        System.out.println(forename + " " + surname);
+        System.out.println(this.forename + " " + this.surname);
     }
 
     private boolean eligibleForBonus() {
-        return (salary.getSalary() > 40000);
+        return (this.salary.getSalary() > 40000);
     }
-
+    @Override
     public String toString() {
-        String bonus = eligibleForBonus() ? "" : "not ";
-        return surname + ", " + forename + " (" + id + "): "
-                + getPositionName() + " at £" + salary.getSalary()
-                + " (£" + salary.calculateTax() + " tax) and is "
-                + bonus + "eligible for bonus.";
+        String bonus = this.eligibleForBonus() ? "" : " not";
+
+        return String.format("%s, %s (%d): %s at £%.1f (£%.1f tax) and is%s eligible for bonus.",
+                this.surname, this.forename, this.id, this.getPositionName(),
+                this.salary.getSalary(), this.salary.calculateTax(), bonus);
     }
 }

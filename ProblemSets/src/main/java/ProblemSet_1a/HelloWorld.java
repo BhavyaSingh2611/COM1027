@@ -1,11 +1,12 @@
 package ProblemSet_1a;
 
 public class HelloWorld {
-    private String displayString = "";
-    public HelloWorld(String helloWorld) {
-        displayString = helloWorld;
+    private String displayString;
+    public HelloWorld(String displayString) {
+        super();
+        this.displayString = displayString;
     }
     public String display() {
-        return displayString;
+        return this.displayString;
     }
 }

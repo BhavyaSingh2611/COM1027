@@ -1,34 +1,34 @@
 package ProblemSet_5a;
 
-import java.util.Arrays;
-import java.util.HashMap;
-
 public class RainfallYear {
-	private int year = 0;
-	private double[] rainfallMonths = {};
+	private int year;
+	private double[] rainfallMonths;
 
 	public RainfallYear(int year) {
+		super();
 		this.year = year;
-		this.rainfallMonths = Arrays.copyOf(rainfallMonths, 12);
+		this.rainfallMonths = new double[12];
 	}
 
 	public double calculateMeanRainfall() {
 		double sum = 0;
-		for (int i = 0; i < rainfallMonths.length; i++) {
-			sum += rainfallMonths[i];
-		}
-		return sum / 12;
+        for (double rainfallMonth : this.rainfallMonths) {
+            sum += rainfallMonth;
+        }
+		return sum / this.rainfallMonths.length;
 	}
 
 	public int getYear() {
-		return year;
+		return this.year;
 	}
 
 	public void enterData(double[] data) {
-		rainfallMonths = data;
+		this.rainfallMonths = data;
 	}
 
 	public double getRainfallMonth(String month) {
+	    /* I tried to implement it using hashmap later realizing that we had
+	    to use switch case
 	    HashMap<String, Integer> months = new HashMap<>();
 	    months.put("JANUARY", 0);
 	    months.put("FEBRUARY", 1);
@@ -42,16 +42,32 @@ public class RainfallYear {
 	    months.put("OCTOBER", 9);
 	    months.put("NOVEMBER", 10);
 	    months.put("DECEMBER", 11);
-		return rainfallMonths[months.get(month)];
+		return rainfallMonths[months.get(month)];*/
+
+        return switch (month) {
+            case "JANUARY" -> 0;
+            case "FEBRUARY" -> 1;
+            case "MARCH" -> 2;
+            case "APRIL" -> 3;
+            case "MAY" -> 4;
+            case "JUNE" -> 5;
+            case "JULY" -> 6;
+            case "AUGUST" -> 7;
+            case "SEPTEMBER" -> 8;
+            case "OCTOBER" -> 9;
+            case "NOVEMBER" -> 10;
+            case "DECEMBER" -> 11;
+            default -> -1;
+        };
 	}
 
 	public double calculateHighestRainfall() {
 		double max = 0;
-		for (int i = 0; i < rainfallMonths.length; i++) {
-			if (rainfallMonths[i] > max) {
-				max = rainfallMonths[i];
-			}
-		}
+        for (double rainfallMonth : this.rainfallMonths) {
+            if (rainfallMonth > max) {
+                max = rainfallMonth;
+            }
+        }
 		return max;
 	}
 }

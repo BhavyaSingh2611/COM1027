@@ -1,47 +1,43 @@
 package ProblemSet_4b;
 
-import java.util.Arrays;
-
 public class Classroom {
 	private String room;
-	private final int CAPACITY = 20;
-	private Student[] maxStudents = {};
+	private static final int CAPACITY = 20;
+	private Student[] maxStudents;
 
 	public Classroom(String room) {
+		super();
 		this.room = room;
-		this.maxStudents = Arrays.copyOf(maxStudents, CAPACITY);
+		this.maxStudents = new Student[CAPACITY];
 	}
 
 	public void addStudents(int index, char initial, String surname) {
-		maxStudents[index] = new Student(initial, surname);
+		this.maxStudents[index] = new Student(initial, surname);
 	}
 
 	public String getSummary() {
 		String toReturn = "";
-		for (int i = 0; i < maxStudents.length; i++) {
-			if (maxStudents[i] != null) {
-				toReturn += maxStudents[i].getStudentDetails()
-				+ "\n";
-			}
-		}
-		if (toReturn == "") {
-			return "No students added";
-		}
-		return toReturn;
+        for (Student student : this.maxStudents) {
+            if (student != null) {
+                toReturn += student.getStudentDetails()
+                        + "\n";
+            }
+        }
+		return toReturn.isEmpty() ? "No students added" : toReturn;
 	}
 
 	public int howManyStudents() {
 		int numStudents = 0;
-		for (int i = 0; i < maxStudents.length; i++) {
-			if (maxStudents[i] != null) {
-				numStudents++;
-			}
-		}
+        for (Student student : this.maxStudents) {
+            if (student != null) {
+                numStudents++;
+            }
+        }
 		return numStudents;
 	}
 
 	public String getRoom() {
-		return room;
+		return this.room;
 	}
 
 	public int getCapacity() {

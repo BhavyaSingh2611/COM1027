@@ -5,6 +5,7 @@ public class Student {
 	private String surname;
 
 	public Student(char initial, String surname) {
+		super();
 		this.initial = initial;
 		this.surname = surname;
 	}

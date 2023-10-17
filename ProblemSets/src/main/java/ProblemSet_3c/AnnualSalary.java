@@ -2,10 +2,15 @@ package ProblemSet_3c;
 
 public class AnnualSalary {
     private double salary = 0.0;
-    private final double PERSONAL_ALLOWANCE = 12570;
+    private static final double PERSONAL_ALLOWANCE = 12570;
+
+    public AnnualSalary() {
+        super();
+    }
 
     public double calculateTax() {
         double tax = 0.0;
+        double salary = this.salary;
 
         if (salary > PERSONAL_ALLOWANCE && salary <= 50270) {
             tax += (salary - PERSONAL_ALLOWANCE) * 0.2;
@@ -25,7 +30,7 @@ public class AnnualSalary {
     }
 
     public double getSalary() {
-        return salary;
+        return this.salary;
     }
 
     public void setSalary(double salary) {

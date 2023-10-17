@@ -1,23 +1,25 @@
 package ProblemSet_5c;
 
 public class Customer {
-	private String name = "";
-	private String surname = "";
+	private String name;
+	private String surname;
 
 	public Customer(String name, String surname) {
+		super();
 		this.name = name;
 		this.surname = surname;
 	}
 
 	public char getName() {
-		return name.charAt(0);
+		return this.name.charAt(0);
 	}
 
 	public String getSurname() {
-		return surname;
+		return this.surname;
 	}
 
+	@Override
 	public String toString() {
-		return getName() + ". " + surname;
+		return this.getName() + ". " + this.surname;
 	}
 }

@@ -1,63 +1,47 @@
 package ProblemSet_5b;
 
+import java.util.regex.Pattern;
+
 public class GasBill {
-	private String accountNumber = "";
-	private double amount = 0;
-	private Customer customer = null;
+	private String accountNumber;
+	private double amount;
+	private Customer customer;
 
 	public GasBill(String accountNumber, double amount, Customer customer) {
+		super();
 		this.accountNumber = accountNumber;
 		this.amount = amount;
 		this.customer = customer;
 	}
 
 	public boolean checkAccountAccuracy(String accountNumber) {
-		if (accountNumber.startsWith("G")) {
-			String[] partString = accountNumber.split("G")[1]
-				.split("-");
-			if (partString.length == 3) {
-				for (int i = 0; i < partString.length; i++) {
-					if (!partString[i].matches("[0-9]+")) {
-						this.accountNumber
-							= "Invalid Account";
-						return false;
-					}
-				}
-				boolean arePartsValid
-					= (partString[0].length() == 4)
-					&& (partString[1].length() == 4)
-					&& (partString[2].length() == 4);
-				if (!arePartsValid) {
-					this.accountNumber = "Invalid Account";
-				}
-				return arePartsValid;
-			}
+		Pattern pattern = Pattern.compile("^G\\d{4}-\\d{4}-\\d{4}");
+		if (!pattern.matcher(accountNumber).matches()) {
+			this.accountNumber = "Invalid Account";
 		}
-		this.accountNumber = "Invalid Account";
-		return false;
+
+		return pattern.matcher(accountNumber).matches();
 	}
 
 	public String getAccountNumber() {
-		return accountNumber;
+		return this.accountNumber;
 	}
 
 	public String getCustomer() {
-		return customer.toString();
+		return this.customer.toString();
 	}
 
 	public double getAmount() {
-		return amount;
+		return this.amount;
 	}
 
 	public String displayAccountDetails() {
-		return "Gas Bill\n Account Number:"
-				+ accountNumber + "\n"
-				+ " Customer:" + getCustomer()
-				+ "\n " + displayAmountDue();
+		return String.format("Gas Bill\n Account Number:%s\n Customer:%s\n %s",
+				this.accountNumber, this.getCustomer(), this.displayAmountDue());
 	}
 
 	public String displayAmountDue() {
 		// https://tinyurl.com/2decimal
-		return "Amount due:£" + String.format("%.2f", amount);
+		return String.format("Amount due:£%.2f", this.amount);
 	}
 }

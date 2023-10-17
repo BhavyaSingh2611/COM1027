@@ -6,21 +6,22 @@ public class Session {
 	private int endTime;
 
 	public Session(String sessionName, int startTime, int endTime) {
+		super();
 		this.sessionName = sessionName;
 		this.startTime = startTime;
 		this.endTime = endTime;
 	}
 
 	public String getSessionName() {
-		return sessionName;
+		return this.sessionName;
 	}
 
 	public int getStartTime() {
-		return startTime;
+		return this.startTime;
 	}
 
 	public int getEndTime() {
-		return endTime;
+		return this.endTime;
 	}
 
 	public void setSessionName(String sessionName) {

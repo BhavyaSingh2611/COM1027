@@ -1,9 +1,10 @@
 package ProblemSet_5c;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
-	private ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+	private List<Pizza> pizzas = new ArrayList<Pizza>();
 	private Customer customer;
 
 	public Order(Customer customer) {
@@ -12,21 +13,19 @@ public class Order {
 
 	public double calculateTotal() {
 		double cost = 0;
-		for (int i = 0; i < pizzas.size(); i++) {
-			cost += pizzas.get(i).calculateCost();
-		}
+        for (Pizza pizza : this.pizzas) {
+            cost += pizza.calculateCost();
+        }
 		return cost;
 	}
 
 	public void addPizza(Pizza pizza) {
-		pizzas.add(pizza);
+		this.pizzas.add(pizza);
 	}
 
 	public String printReceipt() {
-		return "Customer: " + customer.toString() + "\n"
-				+ "Number of Pizzas: "
-				+ pizzas.size() + "\n"
-				+ "Total Cost: " + calculateTotal();
+		return String.format("Customer: %s\nNumber of Pizzas: %d\nTotal Cost: %.2f",
+				this.customer.toString(), this.pizzas.size(), this.calculateTotal());
 	}
 
 }

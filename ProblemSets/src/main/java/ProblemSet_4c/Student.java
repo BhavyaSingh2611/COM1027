@@ -1,46 +1,47 @@
 package ProblemSet_4c;
 
-import java.util.Arrays;
-
 public class Student {
 	private char initial;
 	private String surname;
-	private Module[] modules = {};
+	private Module[] modules;
 
 	public Student(char initial, String surname) {
+		super();
 		this.initial = initial;
 		this.surname = surname;
-		this.modules = Arrays.copyOf(modules, 8);
+		this.modules = new Module[8];
 	}
 
 	public String getStudentDetails() {
-		return initial + ". " + surname + " "
-		 + calculateYearAverage() + "%";
+		return this.initial + ". "
+				+ this.surname + " "
+				+ this.calculateYearAverage()
+				+ "%";
 	}
 
 	public int calculateYearAverage() {
 		double total = 0;
-		for (int i = 0; i < modules.length; i++) {
-			total += modules[i].getAverage();
-		}
-		return (int) (total / 8);
+        for (Module module : this.modules) {
+            total += module.getAverage();
+        }
+		return (int) (total / this.modules.length);
 	}
 
 	public void setModules(int index, String code, double average) {
-		modules[index] = new Module(code, average);
+		this.modules[index] = new Module(code, average);
 	}
 
 	public Module getModules(int index) {
-		return modules[index];
+		return this.modules[index];
 	}
 
 	public String displayArray() {
 		String toReturn = "";
-		for (int i = 0; i < modules.length; i++) {
-			toReturn += modules[i].getCode() + ": "
-			+ modules[i].getAverage() + "\n";
-		}
-		toReturn += "Year Average: " + calculateYearAverage() + "%";
+        for (Module module : this.modules) {
+            toReturn += module.getCode() + ": "
+                    + module.getAverage() + "\n";
+        }
+		toReturn += "Year Average: " + this.calculateYearAverage() + "%";
 		return toReturn;
 	}
 }

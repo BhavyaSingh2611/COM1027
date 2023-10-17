@@ -3,6 +3,10 @@ package ProblemSet_5c;
 public class Pizza {
 	private String[] toppings = {};
 
+	public Pizza() {
+		super();
+	}
+
 	public void addToppings(String[] addToppings) {
 		this.toppings = addToppings;
 	}
@@ -12,42 +16,16 @@ public class Pizza {
 	}
 
 	public double calculateCost() {
-		double cost = 0;
-		switch (toppings.length) {
-		  case 1:
-		    cost = 9.99;
-		    break;
-		  case 2:
-		    cost = 10.99;
-		    break;
-		  case 3:
-		    cost = 10.99;
-		    break;
-		  case 4:
-		    cost = 11.99;
-		    break;
-		  case 5:
-		    cost = 11.99;
-		    break;
-		  case 6:
-		    cost = 12.99;
-		    break;
-		  case 7:
-		    cost = 13.99;
-		    break;
-		  case 8:
-			cost = 14.99;
-			break;
-		  case 9:
-			cost = 15.99;
-			break;
-		  case 10:
-			cost = 14.99;
-			break;
-		  default:
-			cost = 0;
-			break;
-		}
-		return cost;
+		return switch (toppings.length) {
+            case 1 -> 9.99;
+            case 2, 3 -> 10.99;
+            case 4, 5 -> 11.99;
+            case 6 -> 12.99;
+            case 7 -> 13.99;
+            case 8 -> 14.99;
+            case 9 -> 15.99;
+            case 10 -> 14.99;
+            default -> 0;
+        };
 	}
 }
