@@ -6,10 +6,10 @@ public class Email {
     private String emailAddress = DEFAULT_ADDRESS;
 
     public Email(String email) {
+        super();
         this.emailAddress = email;
     }
 
-    public Email() {}
 
     public String getEmailAddress() {
         return emailAddress;

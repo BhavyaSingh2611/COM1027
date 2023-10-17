@@ -5,6 +5,12 @@ public class User {
 
     private Email email;
 
+    public User(String fullname, Email emailAddress) {
+        super();
+        this.name = fullname;
+        this.email = emailAddress;
+    }
+
     @Override
     public String toString() {
         return this.name + " <" + this.email.getEmailAddress() + ">";
