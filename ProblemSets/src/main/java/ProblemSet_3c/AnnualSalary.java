@@ -12,19 +12,28 @@ public class AnnualSalary {
         double tax = 0.0;
         double salary = this.salary;
 
-        if (salary > PERSONAL_ALLOWANCE && salary <= 50270) {
-            tax += (salary - PERSONAL_ALLOWANCE) * 0.2;
+        /*
+        * Constants for calculating the tax
+        * */
+        final double TIER1 = 50270;
+        final double TIER1_PERCENTAGE = 0.2;
+        final double TIER2 = 125140;
+        final double TIER2_PERCENTAGE = 0.4;
+        final double TIER3_PERCENTAGE = 0.45;
+
+        if (salary > PERSONAL_ALLOWANCE && salary <= TIER1) {
+            tax += (salary - PERSONAL_ALLOWANCE) * TIER1_PERCENTAGE;
         }
 
-        if (salary > 50270 && salary <= 125140) {
-            tax += (50270 - PERSONAL_ALLOWANCE) * 0.2;
-            tax += (salary - 50270) * 0.4;
+        if (salary > TIER1 && salary <= TIER2) {
+            tax += (TIER1 - PERSONAL_ALLOWANCE) * TIER1_PERCENTAGE;
+            tax += (salary - TIER1) * TIER2_PERCENTAGE;
         }
 
-        if (salary > 125140) {
-            tax += (50270 - PERSONAL_ALLOWANCE) * 0.2;
-            tax += (125140 - 50270) * 0.4;
-            tax += (salary - 125140) * 0.45;
+        if (salary > TIER2) {
+            tax += (TIER1 - PERSONAL_ALLOWANCE) * TIER1_PERCENTAGE;
+            tax += (TIER2 - TIER1) * TIER2_PERCENTAGE;
+            tax += (salary - TIER2) * TIER3_PERCENTAGE;
         }
         return tax;
     }
