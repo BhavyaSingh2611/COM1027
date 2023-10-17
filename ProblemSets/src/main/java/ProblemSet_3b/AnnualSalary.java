@@ -3,6 +3,14 @@ package ProblemSet_3b;
 public class AnnualSalary {
     private double salary = 0.0;
     private static final double PERSONAL_ALLOWANCE = 12570;
+    /*
+     * Constants for calculating the tax
+     * */
+    private static final double TIER1 = 50270;
+    private static final double TIER1_PERCENTAGE = 0.2;
+    private static final double TIER2 = 125140;
+    private static final double TIER2_PERCENTAGE = 0.4;
+    private static final double TIER3_PERCENTAGE = 0.45;
 
     public AnnualSalary() {
         super();
@@ -11,15 +19,6 @@ public class AnnualSalary {
     public double calculateTax() {
         double tax = 0.0;
         double salary = this.salary;
-
-        /*
-         * Constants for calculating the tax
-         * */
-        double TIER1 = 50270;
-        double TIER1_PERCENTAGE = 0.2;
-        double TIER2 = 125140;
-        double TIER2_PERCENTAGE = 0.4;
-        double TIER3_PERCENTAGE = 0.45;
 
         if (salary > PERSONAL_ALLOWANCE && salary <= TIER1) {
             tax += (salary - PERSONAL_ALLOWANCE) * TIER1_PERCENTAGE;
