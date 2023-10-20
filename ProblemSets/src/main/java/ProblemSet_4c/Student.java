@@ -1,8 +1,5 @@
 package ProblemSet_4c;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class Student {
 	private char initial;
 	private String surname;
