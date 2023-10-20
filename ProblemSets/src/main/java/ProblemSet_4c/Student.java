@@ -1,5 +1,8 @@
 package ProblemSet_4c;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Student {
 	private char initial;
 	private String surname;
@@ -38,8 +41,7 @@ public class Student {
 	public String displayArray() {
 		String toReturn = "";
         for (Module module : this.modules) {
-            toReturn += module.getCode() + ": "
-                    + module.getAverage() + "\n";
+            toReturn += module + "\n";
         }
 		toReturn += "Year Average: "
 				+ this.calculateYearAverage() + "%";

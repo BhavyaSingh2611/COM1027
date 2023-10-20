@@ -18,8 +18,9 @@ public class Module {
 		return this.average;
 	}
 
+	@Override
 	public String toString() {
-		return this.code + ": "
-				+ this.average + "%";
+		return String.format("%s: %.1f",
+				this.code, this.average);
 	}
 }
