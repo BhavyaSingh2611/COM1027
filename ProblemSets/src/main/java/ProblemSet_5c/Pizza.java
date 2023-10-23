@@ -12,11 +12,11 @@ public class Pizza {
 	}
 
 	public String printToppings() {
-		return String.join(",", toppings);
+		return String.join(",", this.toppings);
 	}
 
 	public double calculateCost() {
-		return switch (toppings.length) {
+		return switch (this.toppings.length) {
             case 1 -> 9.99;
             case 2, 3 -> 10.99;
             case 4, 5 -> 11.99;
