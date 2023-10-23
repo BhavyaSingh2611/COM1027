@@ -36,4 +36,11 @@ public class Session {
 		this.endTime = endTime;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s: %d - %d\n",
+				this.sessionName,
+				this.startTime,
+				this.endTime);
+	}
 }
