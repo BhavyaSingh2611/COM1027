@@ -12,6 +12,10 @@ public class GasBill {
 		this.accountNumber = accountNumber;
 		this.amount = amount;
 		this.customer = customer;
+
+		if (!this.checkAccountAccuracy(accountNumber)) {
+			System.out.println("Invalid Account Number Supplied");
+		}
 	}
 
 	public boolean checkAccountAccuracy(String accountNumber) {

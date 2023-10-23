@@ -30,4 +30,8 @@ public class Order {
 				this.calculateTotal());
 	}
 
+	public int howManyPizzasInOrder() {
+		return this.pizzas.size();
+	}
+
 }
