@@ -1,13 +1,18 @@
 package ProblemSet_5c;
 
 public class Pizza {
-	private String[] toppings = {};
+	private String[] toppings = null;
 
 	public Pizza() {
 		super();
+		this.toppings = new String[0];
 	}
 
-	public void addToppings(String[] addToppings) {
+	public void addToppings(String[] addToppings)
+			throws IllegalArgumentException {
+		if (addToppings.length > 10) {
+			throw new IllegalArgumentException("Too Many Toppings");
+		}
 		this.toppings = addToppings;
 	}
 

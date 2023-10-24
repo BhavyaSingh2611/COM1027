@@ -1,8 +1,8 @@
 package ProblemSet_5a;
 
 public class RainfallYear {
-	private int year;
-	private double[] rainfallMonths;
+	private int year = 0;
+	private double[] rainfallMonths = null;
 
 	public RainfallYear(int year) {
 		super();

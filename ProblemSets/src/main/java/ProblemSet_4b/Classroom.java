@@ -1,9 +1,9 @@
 package ProblemSet_4b;
 
 public class Classroom {
-	private String room;
+	private String room = null;
 	private static final int CAPACITY = 20;
-	private Student[] maxStudents;
+	private Student[] maxStudents = null;
 
 	public Classroom(String room) {
 		super();

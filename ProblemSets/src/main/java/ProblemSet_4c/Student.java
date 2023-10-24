@@ -1,9 +1,9 @@
 package ProblemSet_4c;
 
 public class Student {
-	private char initial;
-	private String surname;
-	private Module[] modules;
+	private char initial = 0;
+	private String surname = null;
+	private Module[] modules = null;
 
 	public Student(char initial, String surname) {
 		super();

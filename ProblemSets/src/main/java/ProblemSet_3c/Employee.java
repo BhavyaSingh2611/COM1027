@@ -1,11 +1,12 @@
 package ProblemSet_3c;
 
 public class Employee {
-    private int id;
-    private String forename;
-    private String surname;
-    private AnnualSalary salary;
-    private Position companyPosition;
+    private int id = 0;
+    private String forename = null;
+    private String surname = null;
+    private AnnualSalary salary = null;
+    private Position companyPosition = null;
+    private static final double BONUS_THRESHOLD = 40000;
 
     public Employee(int id, String forename,
     		String surname, AnnualSalary salary,
@@ -43,7 +44,7 @@ public class Employee {
     }
 
     private boolean eligibleForBonus() {
-        return (this.salary.getSalary() > 40000);
+        return (this.salary.getSalary() > BONUS_THRESHOLD);
     }
     @Override
     public String toString() {

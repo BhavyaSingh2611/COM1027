@@ -1,8 +1,8 @@
 package ProblemSet_4c;
 
 public class Module {
-	private String code;
-	private double average;
+	private String code = null;
+	private double average = 0;
 
 	public Module(String code, double average) {
 		super();

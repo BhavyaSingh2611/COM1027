@@ -1,9 +1,9 @@
 package ProblemSet_4a;
 
 public class Session {
-	private String sessionName;
-	private int startTime;
-	private int endTime;
+	private String sessionName = null;
+	private int startTime = 0;
+	private int endTime = 0;
 
 	public Session(String sessionName, int startTime, int endTime) {
 		super();
@@ -22,10 +22,6 @@ public class Session {
 
 	public int getEndTime() {
 		return this.endTime;
-	}
-
-	public void setSessionName(String sessionName) {
-		this.sessionName = sessionName;
 	}
 
 	public void setStartTime(int startTime) {

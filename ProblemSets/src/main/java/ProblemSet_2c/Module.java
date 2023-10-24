@@ -2,9 +2,9 @@ package ProblemSet_2c;
 
 public class Module {
     private static final String NAME = "COM1027";
-    private Assessment assessment1;
-    private Assessment assessment2;
-    private Assessment assessment3;
+    private Assessment assessment1 = null;
+    private Assessment assessment2 = null;
+    private Assessment assessment3 = null;
     public Module(Assessment assessment1, Assessment assessment2,
                   Assessment assessment3) {
         super();

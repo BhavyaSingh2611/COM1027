@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-	private List<Pizza> pizzas = new ArrayList<Pizza>();
-	private Customer customer;
+	private List<Pizza> pizzas = null;
+	private Customer customer = null;
 
 	public Order(Customer customer) {
 		this.customer = customer;
+		this.pizzas =  new ArrayList<Pizza>();
 	}
 
 	public double calculateTotal() {

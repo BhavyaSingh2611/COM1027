@@ -1,8 +1,8 @@
 package ProblemSet_4b;
 
 public class Student {
-	private char initial;
-	private String surname;
+	private char initial = 0;
+	private String surname = null;
 
 	public Student(char initial, String surname) {
 		super();

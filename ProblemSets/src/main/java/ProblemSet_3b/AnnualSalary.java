@@ -1,7 +1,7 @@
 package ProblemSet_3b;
 
 public class AnnualSalary {
-    private double salary = 0.0;
+    private double salary = 0;
     private static final double PERSONAL_ALLOWANCE = 12570;
     /*
      * Constants for calculating the tax
@@ -17,7 +17,7 @@ public class AnnualSalary {
     }
 
     public double calculateTax() {
-        double tax = 0.0;
+        double tax = 0;
         double salary = this.salary;
 
         if (salary > PERSONAL_ALLOWANCE && salary <= TIER1) {

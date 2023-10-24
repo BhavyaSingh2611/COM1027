@@ -1,8 +1,8 @@
 package ProblemSet_4a;
 
 public class Day {
-	private String name;
-	private Session[] sessions;
+	private String name = null;
+	private Session[] sessions = null;
 
 	public Day(String name) {
 		super();
@@ -22,6 +22,10 @@ public class Day {
 
 	public Session getSessions(int i) {
 		return this.sessions[i];
+	}
+
+	public void display() {
+		System.out.println(this.toString());
 	}
 
 	@Override

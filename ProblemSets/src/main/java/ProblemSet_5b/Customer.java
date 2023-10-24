@@ -1,8 +1,8 @@
 package ProblemSet_5b;
 
 public class Customer {
-	private String name;
-	private String surname;
+	private String name = null;
+	private String surname = null;
 
 	public Customer(String name, String surname) {
 		super();
