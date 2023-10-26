@@ -8,17 +8,21 @@ public class Palette {
         super();
         this.primaryColours = new P_COLOUR[3];
     }
-
     public Palette(P_COLOUR[] primaryColours) {
         super();
-        this.primaryColours = primaryColours;
+        this.primaryColours = new P_COLOUR[3];
+        for (P_COLOUR primaryColour : primaryColours) {
+            if (primaryColour != null) {
+                this.addColour(primaryColour);
+            }
+        }
     }
 
     public String getColours() {
         String colourArr = "";
-        for (int i = 0; i < this.primaryColours.length; i++) {
-            if (this.primaryColours[i] != null) {
-            	colourArr += this.primaryColours[i] + ", ";
+        for (P_COLOUR primaryColour : this.primaryColours) {
+            if (primaryColour != null) {
+                colourArr += primaryColour + ", ";
             }
         }
         if (!colourArr.isEmpty()) {
@@ -30,7 +34,8 @@ public class Palette {
 
     public void addColour(P_COLOUR pColour) {
         for (int i = 0; i < this.primaryColours.length; i++) {
-            if ((pColour != this.primaryColours[i]) && (this.primaryColours[i] == null)) { 
+            if ((pColour != this.primaryColours[i])
+                    && (this.primaryColours[i] == null)) {
             	this.primaryColours[i] = pColour;
             	break;
             }

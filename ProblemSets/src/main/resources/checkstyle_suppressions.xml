@@ -16,6 +16,7 @@
     <suppress files="." checks="HiddenField"/>
     <suppress files="." checks="FinalParameters"/>
     <suppress files="." checks="MemberName"/>
+    <suppress files="." checks="TypeName"/>
 
     <!-- Permit ProblemSet_Xy package names for readability. -->
     <suppress files="." checks="PackageName"/>
