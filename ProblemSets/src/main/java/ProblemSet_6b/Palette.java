@@ -26,7 +26,8 @@ public class Palette {
             }
         }
         if (!colourArr.isEmpty()) {
-            colourArr = new StringBuilder(colourArr.substring(0, colourArr.length() - 2));
+            colourArr = new StringBuilder(colourArr.substring(0,
+                    colourArr.length() - 2));
             return colourArr.toString();
         }
         return "No colours added";

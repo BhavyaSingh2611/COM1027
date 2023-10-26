@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class StudentTracker {
-    List<Student> studentList;
-    Map<Integer, Student> moduleList;
+    private List<Student> studentList;
+    private Map<Integer, Student> moduleList;
 
     public StudentTracker() {
         super();
