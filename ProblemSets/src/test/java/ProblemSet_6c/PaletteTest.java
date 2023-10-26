@@ -1,8 +1,9 @@
 package ProblemSet_6c;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PaletteTest {
 
@@ -14,10 +15,14 @@ public class PaletteTest {
 	assertEquals("ORANGE", p1.mixColours());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testPalette() {
-	P_COLOUR[] colourArray = new P_COLOUR[] { P_COLOUR.BLUE, P_COLOUR.YELLOW, P_COLOUR.RED, null };
-	Palette p2 = new Palette(colourArray);
+	try {
+	    P_COLOUR[] colourArray = new P_COLOUR[] { P_COLOUR.BLUE, P_COLOUR.YELLOW, P_COLOUR.RED, null };
+	    Palette p2 = new Palette(colourArray);
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
 
     }
 

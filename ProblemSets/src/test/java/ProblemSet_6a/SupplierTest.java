@@ -1,14 +1,19 @@
 package ProblemSet_6a;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SupplierTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testSupplierInvalid() {
-	new Supplier("Bloggs", "1483681234");
+	try {
+	    new Supplier("Bloggs", "1483681234");
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
     @Test

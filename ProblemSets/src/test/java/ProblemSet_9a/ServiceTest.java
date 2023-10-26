@@ -1,29 +1,51 @@
 package ProblemSet_9a;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ServiceTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidCase() {
-	new Service("news35652", "News", VATRate.STANDARD);
+	try {
+	    new Service("news35652", "News", VATRate.STANDARD);
+
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void testInvalidCodeNull() {
-	new Service(null, "Room", VATRate.STANDARD);
+
+	try {
+	    new Service(null, "Room", VATRate.STANDARD);
+
+	    fail("Expected NullPointerException was not thrown");
+	} catch (NullPointerException e) {
+	}
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void testInvalidNameNull() {
-	new Service("ROOM1234", null, VATRate.STANDARD);
+	try {
+	    new Service("ROOM1234", null, VATRate.STANDARD);
+
+	    fail("Expected NullPointerException was not thrown");
+	} catch (NullPointerException e) {
+	}
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidNumCharacter() {
-	new Service("DRIN356", "Drinks", VATRate.STANDARD);
+	try {
+	    new Service("DRIN356", "Drinks", VATRate.STANDARD);
+
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
     @Test

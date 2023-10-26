@@ -1,22 +1,34 @@
 package ProblemSet_9a;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ChargeTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidStandard() {
-	Service service = new Service("ROOM12345", "Room", VATRate.STANDARD);
-	Charge charge = new Charge(service, -100.5);
 
+	try {
+	    Service service = new Service("ROOM12345", "Room", VATRate.STANDARD);
+	    Charge charge = new Charge(service, -100.5);
+
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidZero() {
-	Service service = new Service("DRIN32165", "Drinks", VATRate.ZERO);
-	Charge charge = new Charge(service, 0);
+
+	try {
+	    Service service = new Service("DRIN32165", "Drinks", VATRate.ZERO);
+	    Charge charge = new Charge(service, 0);
+
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
     @Test

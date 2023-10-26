@@ -1,8 +1,9 @@
 package ProblemSet_6a;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class IngredientTest {
 
@@ -26,15 +27,20 @@ public class IngredientTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testIngredientCookedMeat() {
-	Supplier supplier = new Supplier("Bobby", "08001111");
-	Ingredient ingredient = new Ingredient("Lamb Chop", IngredientType.MEAT, supplier, 260);
+
+	try {
+	    Supplier supplier = new Supplier("Bobby", "08001111");
+	    Ingredient ingredient = new Ingredient("Lamb Chop", IngredientType.MEAT, supplier, 260);
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
     @Test
     public void testIngredientMeat() {
-	Supplier supplier = new Supplier("Bobby", "07712345678");
+	Supplier supplier = new Supplier("Bobby", "01483123456");
 	Ingredient ingredient = new Ingredient("Lamb Chop", IngredientType.MEAT, supplier, 245);
 
 	assertEquals("Lamb Chop", ingredient.getName());
@@ -43,9 +49,13 @@ public class IngredientTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidSupplierSpace() {
-	Supplier supplier = new Supplier("James", "01234 5678");
+	try {
+	    Supplier supplier = new Supplier("James", "01234 5678");
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
 }

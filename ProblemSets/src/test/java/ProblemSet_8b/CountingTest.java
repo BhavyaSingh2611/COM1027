@@ -1,8 +1,9 @@
 package ProblemSet_8b;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CountingTest {
 
@@ -27,11 +28,14 @@ public class CountingTest {
 
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void testInvalidConstruction() {
-	c = new Counting();
-	assertEquals("", c.readTextFile(null));
-
+	try {
+	    c = new Counting();
+	    assertEquals("", c.readTextFile(null));
+	    fail("Expected NullPointerException was not thrown");
+	} catch (NullPointerException e) {
+	}
     }
 
 }

@@ -1,8 +1,9 @@
 package ProblemSet_8a;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * A simple class used to test the "Customer" class.
@@ -19,9 +20,13 @@ public class CustomerTest {
 	assertEquals("Ross", customer.getSurname());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testInvalidCustomerConstruction() {
-	customer = new Customer("alice", "wOnderland");
+	try {
+	    customer = new Customer("alice", "wOnderland");
+	    fail("Expected IllegalArgumentException was not thrown");
+	} catch (IllegalArgumentException e) {
+	}
     }
 
     @Test
