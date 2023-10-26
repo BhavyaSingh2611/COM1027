@@ -25,6 +25,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("%s %s (%d)", this.forename, this.surname, this.age);
+        return String.format("%s %s (%d)", this.forename,
+                this.surname, this.age);
     }
 }
