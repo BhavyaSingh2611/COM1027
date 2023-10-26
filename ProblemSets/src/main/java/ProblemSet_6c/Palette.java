@@ -24,9 +24,9 @@ public class Palette {
 
     public String getColours() {
         StringBuilder colourArr = new StringBuilder();
-        for (int i = 0; i < this.primaryColours.length; i++) {
-            if (this.primaryColours[i] != null) {
-            	colourArr.append(this.primaryColours[i]).append(", ");
+        for (P_COLOUR primaryColour : this.primaryColours) {
+            if (primaryColour != null) {
+                colourArr.append(primaryColour).append(", ");
             }
         }
         if (!colourArr.isEmpty()) {

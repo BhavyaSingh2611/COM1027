@@ -19,15 +19,15 @@ public class Palette {
     }
 
     public String getColours() {
-        String colourArr = "";
+        StringBuilder colourArr = new StringBuilder();
         for (P_COLOUR primaryColour : this.primaryColours) {
             if (primaryColour != null) {
-                colourArr += primaryColour + ", ";
+                colourArr.append(primaryColour).append(", ");
             }
         }
         if (!colourArr.isEmpty()) {
-            colourArr = colourArr.substring(0, colourArr.length() - 2);
-            return colourArr;
+            colourArr = new StringBuilder(colourArr.substring(0, colourArr.length() - 2));
+            return colourArr.toString();
         }
         return "No colours added";
     }
