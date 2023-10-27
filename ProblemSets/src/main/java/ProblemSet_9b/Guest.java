@@ -10,7 +10,8 @@ public class Guest implements IGuest {
     private String address;
     private String telephone;
     private List<Charge> charges;
-    public Guest(String forename, String surname, String address, String telephone) {
+    public Guest(String forename, String surname, String address,
+                 String telephone) {
         super();
         this.forename = forename;
         this.surname = surname;

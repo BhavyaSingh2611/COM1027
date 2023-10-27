@@ -28,7 +28,7 @@ public class Hotel {
         StringBuilder toReturn = new StringBuilder();
         toReturn.append(this.name).append("\n").append("Guest List\n");
         for (IGuest guest : this.guests) {
-            toReturn.append(guest.toString());
+            toReturn.append(guest.toString()).append("\n");
         }
 
         return toReturn.toString();

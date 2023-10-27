@@ -4,7 +4,8 @@ public class Charge {
     private Service service;
     private double amount;
 
-    public Charge(Service service, double amount) throws IllegalArgumentException {
+    public Charge(Service service, double amount)
+            throws IllegalArgumentException {
         if (amount <= 0) {
             throw new IllegalArgumentException("Negative/Zero Amount");
         }

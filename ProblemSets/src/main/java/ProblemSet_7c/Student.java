@@ -20,7 +20,6 @@ public class Student {
         Pattern urnPattern = Pattern.compile(URN_PATTERN);
 
         if (!namePattern.matcher(name).matches()) {
-            //TODO: Check on the discussion forum
             this.name = "Invalid Name";
         }
         if (!urnPattern.matcher(urn).matches()) {
