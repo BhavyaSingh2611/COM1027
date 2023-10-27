@@ -56,7 +56,13 @@ public class Guest implements IGuest {
 
     @Override
     public double calculateVATChargeAtRate(VATRate rate) {
-        return this.calculateTotalChargeWithoutVAT() * rate.getRate();
+        double total = 0;
+        for (Charge charge : this.charges) {
+            if (charge.getService().getRate().equals(rate)) {
+                total += charge.calculateVAT();
+            }
+        }
+        return total;
     }
 
     @Override
