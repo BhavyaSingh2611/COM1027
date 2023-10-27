@@ -1,4 +1,4 @@
-package ProblemSet_9b;
+package ProblemSet_9c;
 
 public interface IGuest {
     void addCharge(Service service, double cost);

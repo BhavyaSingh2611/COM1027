@@ -1,4 +1,4 @@
-package ProblemSet_9b;
+package ProblemSet_9c;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,6 @@ public class Guest implements IGuest {
         return this.calculateTotalChargeWithoutVAT() * rate.getRate();
     }
 
-    @Override
     public double calculateTotalChargeIncVat() {
         double total = 0;
         for (Charge charge : this.charges) {
@@ -72,4 +71,5 @@ public class Guest implements IGuest {
         return String.format("%s %s, %s, %s", this.forename, this.surname,
                 this.address, this.telephone);
     }
+
 }
