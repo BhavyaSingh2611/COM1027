@@ -24,7 +24,7 @@ public class PersonTracker {
             String line = this.reader.readLine();
 
             while (line != null) {
-                breakLine(line);
+                this.breakLine(line);
                 line = this.reader.readLine();
             }
 
