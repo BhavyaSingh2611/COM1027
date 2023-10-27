@@ -10,7 +10,7 @@ public class Student {
     private List<Module> moduleList;
     private static final String NAME_PATTERN = "^[A-Z][a-z]* [A-Z][a-z]*$";
     private static final String URN_PATTERN = "\\d{5}";
-    public Student(String name, String urn) {
+    public Student(String name, String urn) throws IllegalArgumentException {
         super();
         this.moduleList = new ArrayList<Module>();
         this.name = name;
@@ -20,7 +20,7 @@ public class Student {
         Pattern urnPattern = Pattern.compile(URN_PATTERN);
 
         if (!namePattern.matcher(name).matches()) {
-            this.name = "Invalid Name";
+            throw new IllegalArgumentException("Badly formatted name");
         }
         if (!urnPattern.matcher(urn).matches()) {
             this.urn = "00000";
