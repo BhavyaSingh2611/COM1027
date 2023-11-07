@@ -12,7 +12,7 @@ public class Guest implements IGuest {
     private List<Charge> charges;
 
     /**
-     * Creates a guest object
+     * Creates a guest object.
      *
      * @param forename
      * @param surname
@@ -61,7 +61,7 @@ public class Guest implements IGuest {
     }
 
     /**
-     * Calculates total pre-VAT
+     * Calculates total pre-VAT.
      *
      * @return total charge without VAT
      */
@@ -93,7 +93,7 @@ public class Guest implements IGuest {
     }
 
     /**
-     * Calculates total post-VAT
+     * Calculates total post-VAT.
      *
      * @return total inclusive of VAT
      */

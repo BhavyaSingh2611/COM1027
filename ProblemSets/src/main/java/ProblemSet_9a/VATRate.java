@@ -8,7 +8,7 @@ public enum VATRate {
     private double rate;
 
     /**
-     * Gets the percentage VAT
+     * Gets the percentage VAT.
      *
      * @return percentage of VAT as double
      */

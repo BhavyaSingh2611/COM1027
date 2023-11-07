@@ -10,7 +10,7 @@ public class Service {
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 
     /**
-     * Creates a service object
+     * Creates a service object.
      *
      * @param code
      * @param name

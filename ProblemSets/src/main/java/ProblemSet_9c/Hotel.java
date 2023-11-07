@@ -17,7 +17,8 @@ public class Hotel {
     }
 
     /**
-     * Adds guest to the hotel guest list
+     * Adds guest to the hotel guest list.
+     *
      * @param guest
      */
 
@@ -34,7 +35,7 @@ public class Hotel {
     }
 
     /**
-     * Returns the guest list with the hotel name on top
+     * Returns the guest list with the hotel name on top.
      *
      * @return list of all guests in the hotel
      */

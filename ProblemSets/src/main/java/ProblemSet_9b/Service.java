@@ -10,7 +10,7 @@ public class Service {
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 
     /**
-     * Creates a service object
+     * Creates a service object.
      *
      * @param code
      * @param name
@@ -18,7 +18,8 @@ public class Service {
      * @throws NullPointerException if any parameters is null
      * @throws IllegalArgumentException if code doesn't match "^[A-Z]{4}\\d{5}"
      */
-    public Service(String code, String name, VATRate rate) throws NullPointerException, IllegalArgumentException {
+    public Service(String code, String name, VATRate rate)
+            throws NullPointerException, IllegalArgumentException {
         Pattern pattern = Pattern.compile(PATTERN);
         if (code == null || name == null || rate == null) {
             throw new NullPointerException("Null parameter supplied");

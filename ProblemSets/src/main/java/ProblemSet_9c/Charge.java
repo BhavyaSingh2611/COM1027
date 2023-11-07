@@ -5,7 +5,7 @@ public class Charge {
     private double amount = 0;
 
     /**
-     * Amount should be greater than 0
+     * Amount should be greater than 0.
      *
      * @param service
      * @param amount
@@ -31,7 +31,7 @@ public class Charge {
 
     /**
      * The rate at which the VAT is calculated is dependent on the service
-     * VAT -> 0, 5, 20
+     * VAT -> 0, 5, 20.
      *
      * @return VAT calculated on the amount
      */
