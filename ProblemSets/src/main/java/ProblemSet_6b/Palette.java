@@ -37,8 +37,9 @@ public class Palette {
     public void addColour(P_COLOUR pColour) throws IllegalArgumentException {
         boolean isAdded = false;
         for (int i = 0; i < this.primaryColours.length; i++) {
-            if ((pColour != this.primaryColours[i])
-                    && (this.primaryColours[i] == null)) {
+            if (pColour == this.primaryColours[i]) {
+                throw new IllegalArgumentException("Colour already added");
+            } else if (this.primaryColours[i] == null) {
             	this.primaryColours[i] = pColour;
                 isAdded = true;
             	break;
