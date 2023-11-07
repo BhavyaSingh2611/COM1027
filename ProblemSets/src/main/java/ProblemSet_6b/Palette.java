@@ -8,7 +8,7 @@ public class Palette {
         super();
         this.primaryColours = new P_COLOUR[3];
     }
-    public Palette(P_COLOUR[] primaryColours) {
+    public Palette(P_COLOUR[] primaryColours) throws IllegalArgumentException {
         super();
         this.primaryColours = new P_COLOUR[3];
         if (primaryColours.length > 3) {
@@ -39,7 +39,7 @@ public class Palette {
         for (int i = 0; i < this.primaryColours.length; i++) {
             if (pColour == this.primaryColours[i]) {
                 throw new IllegalArgumentException("Colour already added");
-            } else if (this.primaryColours[i] == null) {
+            } else if (this.primaryColours[i] == null && pColour != null) {
             	this.primaryColours[i] = pColour;
                 isAdded = true;
             	break;

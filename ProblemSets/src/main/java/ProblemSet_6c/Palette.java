@@ -40,7 +40,7 @@ public class Palette {
         for (int i = 0; i < this.primaryColours.length; i++) {
             if (pColour == this.primaryColours[i]) {
                 throw new IllegalArgumentException("Colour already added");
-            } else if (this.primaryColours[i] == null) {
+            } else if (this.primaryColours[i] == null && pColour != null) {
                 this.primaryColours[i] = pColour;
                 isAdded = true;
                 break;
