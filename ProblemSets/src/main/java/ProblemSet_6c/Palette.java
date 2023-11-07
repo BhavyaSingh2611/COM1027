@@ -30,20 +30,23 @@ public class Palette {
             }
         }
         if (!colourArr.isEmpty()) {
-            colourArr = new StringBuilder(colourArr.substring(0,
-                    colourArr.length() - 2));
-            return colourArr.toString();
+            return colourArr.substring(0, colourArr.length() - 2);
         }
         return "No colours added";
     }
 
-    public void addColour(P_COLOUR pColour) {
+    public void addColour(P_COLOUR pColour) throws IllegalArgumentException {
+        boolean isAdded = false;
         for (int i = 0; i < this.primaryColours.length; i++) {
             if ((pColour != this.primaryColours[i])
                     && (this.primaryColours[i] == null)) {
-            	this.primaryColours[i] = pColour;
-            	break;
+                this.primaryColours[i] = pColour;
+                isAdded = true;
+                break;
             }
+        }
+        if (!isAdded) {
+            throw new IllegalArgumentException("Too many colours");
         }
     }
 
@@ -75,7 +78,5 @@ public class Palette {
             case "111" -> "BLACK";
             default -> "";
         };
-
-
     }
 }

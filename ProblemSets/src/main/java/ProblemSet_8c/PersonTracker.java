@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonTracker {
-    private List<Person> peopleList = new ArrayList<Person>();
+    private List<Person> peopleList;
     private BufferedReader reader;
 
 
     public PersonTracker() {
         super();
+        this.peopleList = new ArrayList<Person>();
     }
 
     public void addPerson(String forename, String surname, int age) {

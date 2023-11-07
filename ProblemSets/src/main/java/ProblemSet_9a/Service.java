@@ -3,13 +3,14 @@ package ProblemSet_9a;
 import java.util.regex.Pattern;
 
 public class Service {
-    private String code;
-    private String name;
+    private String code = null;
+    private String name = null;
     private VATRate rate;
 
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 
     public Service(String code, String name, VATRate rate) {
+        super();
         Pattern pattern = Pattern.compile(PATTERN);
         if (code == null || name == null || rate == null) {
             throw new NullPointerException("Null parameter supplied");
