@@ -5,11 +5,20 @@ import java.util.List;
 
 public class Guest implements IGuest {
 
-    private String forename;
-    private String surname;
-    private String address;
-    private String telephone;
+    private String forename = null;
+    private String surname = null;
+    private String address = null;
+    private String telephone = null;
     private List<Charge> charges;
+
+    /**
+     * Creates a guest object
+     *
+     * @param forename
+     * @param surname
+     * @param address
+     * @param telephone
+     */
     public Guest(String forename, String surname, String address,
                  String telephone) {
         super();
@@ -40,11 +49,22 @@ public class Guest implements IGuest {
         return this.telephone;
     }
 
+    /**
+     * Creates a new Charge object with the parameters provided
+     * and adds it to the list of charges.
+     * @param service
+     * @param cost
+     */
     @Override
     public void addCharge(Service service, double cost) {
         this.charges.add(new Charge(service, cost));
     }
 
+    /**
+     * Calculates total pre-VAT
+     *
+     * @return total charge without VAT
+     */
     @Override
     public double calculateTotalChargeWithoutVAT() {
         double total = 0;
@@ -54,6 +74,13 @@ public class Guest implements IGuest {
         return total;
     }
 
+    /**
+     * Calculates sum of all VAT percentages for all the charges that
+     * the guest has incurred at the specified VAT rate.
+     *
+     * @param rate
+     * @return total of products that meet the rate provided in parameter
+     */
     @Override
     public double calculateVATChargeAtRate(VATRate rate) {
         double total = 0;
@@ -65,6 +92,11 @@ public class Guest implements IGuest {
         return total;
     }
 
+    /**
+     * Calculates total post-VAT
+     *
+     * @return total inclusive of VAT
+     */
     @Override
     public double calculateTotalChargeIncVat() {
         double total = 0;

@@ -4,6 +4,12 @@ public class Charge {
     private Service service;
     private double amount;
 
+    /**
+     * Amount should be greater than 0
+     * @param service
+     * @param amount
+     * @throws IllegalArgumentException
+     */
     public Charge(Service service, double amount)
             throws IllegalArgumentException {
         if (amount <= 0) {
@@ -21,7 +27,16 @@ public class Charge {
         return this.amount;
     }
 
+    /**
+     * The rate at which the VAT is calculated is dependent on the service
+     * VAT -> 0, 5, 20
+     *
+     * @return VAT calculated on the amount
+     */
     public double calculateVAT() {
+        /* The first getRate returns the VATRate enum and the
+         * second one is the enum getter to get the percentage
+         */
         return this.amount * this.service.getRate().getRate();
     }
 }

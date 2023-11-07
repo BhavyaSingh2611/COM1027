@@ -9,7 +9,16 @@ public class Service {
 
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 
-    public Service(String code, String name, VATRate rate) {
+    /**
+     * Creates a service object
+     *
+     * @param code
+     * @param name
+     * @param rate
+     * @throws NullPointerException if any parameters is null
+     * @throws IllegalArgumentException if code doesn't match "^[A-Z]{4}\\d{5}"
+     */
+    public Service(String code, String name, VATRate rate) throws NullPointerException, IllegalArgumentException {
         super();
         Pattern pattern = Pattern.compile(PATTERN);
         if (code == null || name == null || rate == null) {
