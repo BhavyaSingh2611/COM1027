@@ -5,7 +5,7 @@ public enum VATRate {
     LOW(5),
     STANDARD(20);
 
-    private double rate;
+    private double rate = 0;
 
     /**
      * Gets the percentage VAT.

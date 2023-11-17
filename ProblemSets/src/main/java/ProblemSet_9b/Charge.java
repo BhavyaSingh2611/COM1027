@@ -1,14 +1,15 @@
 package ProblemSet_9b;
 
 public class Charge {
-    private Service service;
-    private double amount;
+    private Service service = null;
+    private double amount = 0;
 
     /**
-     * Amount should be greater than 0.
+     * Constructs a Charge object.
+     *
      * @param service
      * @param amount
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException if the amount is <= 0
      */
     public Charge(Service service, double amount)
             throws IllegalArgumentException {

@@ -5,33 +5,32 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Counting {
-    private BufferedReader reader;
     public Counting() {
         super();
     }
 
-    public String readTextFile(String file) {
+    public String readTextFile(String file) throws RuntimeException {
         StringBuilder toReturn = new StringBuilder();
         try {
-            this.reader = new BufferedReader(new FileReader(file));
-            String line = this.reader.readLine();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
             int i = 0;
 
             while (line != null) {
                 i++;
                 toReturn.append(displayLine(line, i));
-                line = this.reader.readLine();
+                line = reader.readLine();
             }
 
-            this.reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            reader.close();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
         }
 
         return toReturn.toString();
     }
 
-    private String displayLine(String line, int index) {
-        return line + " : " + index + "\n";
+    public String displayLine(String line, int counter) {
+        return String.format("%s : %d\n", line, counter);
     }
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
-    private String name;
-    private List<IGuest> guests;
+    private String name = null;
+    private List<IGuest> guests = null;
 
     /**
      *

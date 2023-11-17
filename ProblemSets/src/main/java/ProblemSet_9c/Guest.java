@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Guest implements IGuest {
 
-    private String forename;
-    private String surname;
-    private String address;
-    private String telephone;
-    private List<Charge> charges;
+    private String forename = null;
+    private String surname = null;
+    private String address = null;
+    private String telephone = null;
+    private List<Charge> charges = null;
 
     /**
      * Creates a guest object.

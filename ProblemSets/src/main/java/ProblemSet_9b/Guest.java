@@ -9,7 +9,7 @@ public class Guest implements IGuest {
     private String surname = null;
     private String address = null;
     private String telephone = null;
-    private List<Charge> charges;
+    private List<Charge> charges = null;
 
     /**
      * Creates a guest object.
@@ -52,9 +52,11 @@ public class Guest implements IGuest {
     /**
      * Creates a new Charge object with the parameters provided
      * and adds it to the list of charges.
+     *
      * @param service
      * @param cost
      */
+    //TODO: Ask about parameter names
     @Override
     public void addCharge(Service service, double cost) {
         this.charges.add(new Charge(service, cost));
@@ -81,6 +83,7 @@ public class Guest implements IGuest {
      * @param rate
      * @return total of products that meet the rate provided in parameter
      */
+    //TODO: Ask about parameter names
     @Override
     public double calculateVATChargeAtRate(VATRate rate) {
         double total = 0;

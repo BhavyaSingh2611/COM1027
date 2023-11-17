@@ -1,11 +1,11 @@
 package ProblemSet_9a;
 
 public class Charge {
-    private Service service;
+    private Service service = null;
     private double amount = 0;
 
     /**
-     * Amount should be greater than 0.
+     * Constructs a Charge object.
      *
      * @param service
      * @param amount

@@ -35,13 +35,13 @@ public class Palette {
         return "No colours added";
     }
 
-    public void addColour(P_COLOUR pColour) throws IllegalArgumentException {
+    public void addColour(P_COLOUR colour) throws IllegalArgumentException {
         boolean isAdded = false;
         for (int i = 0; i < this.primaryColours.length; i++) {
-            if (pColour == this.primaryColours[i]) {
+            if (colour == this.primaryColours[i]) {
                 throw new IllegalArgumentException("Colour already added");
-            } else if (this.primaryColours[i] == null && pColour != null) {
-                this.primaryColours[i] = pColour;
+            } else if (this.primaryColours[i] == null && colour != null) {
+                this.primaryColours[i] = colour;
                 isAdded = true;
                 break;
             }

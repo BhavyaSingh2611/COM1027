@@ -22,8 +22,8 @@ public class RainfallYear {
 		return this.year;
 	}
 
-	public void enterData(double[] data) {
-		this.rainfallMonths = data;
+	public void enterData(double[] rainfall) {
+		this.rainfallMonths = rainfall;
 	}
 
 	public double getRainfallMonth(String month) {

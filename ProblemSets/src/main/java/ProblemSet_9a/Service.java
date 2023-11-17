@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Service {
     private String code = null;
     private String name = null;
-    private VATRate rate;
+    private VATRate rate = null;
 
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 
@@ -18,6 +18,8 @@ public class Service {
      * @throws NullPointerException if any parameters is null
      * @throws IllegalArgumentException if code doesn't match "^[A-Z]{4}\\d{5}"
      */
+
+    //TODO: Ask about the fact that null check is introduced in 9b so should we add it to 9a as well
     public Service(String code, String name, VATRate rate)
             throws NullPointerException, IllegalArgumentException {
         super();

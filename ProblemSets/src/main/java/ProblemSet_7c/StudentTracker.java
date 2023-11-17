@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class StudentTracker {
-    private List<Student> studentList;
-    private Map<Integer, Student> moduleList;
+    private List<Student> studentList = null;
+    private Map<Integer, Student> moduleList = null;
 
     public StudentTracker() {
         super();
@@ -15,7 +15,7 @@ public class StudentTracker {
         this.moduleList = new HashMap<Integer, Student>();
     }
 
-
+    //TODO: Ask about the parameter names
     public void addStudent(Student student, List<Module> modules) {
         for (Module module : modules) {
             student.addModuleList(module);

@@ -1,7 +1,7 @@
 package ProblemSet_9c;
 
 public class Charge {
-    private Service service;
+    private Service service = null;
     private double amount = 0;
 
     /**

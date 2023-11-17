@@ -3,9 +3,9 @@ package ProblemSet_9b;
 import java.util.regex.Pattern;
 
 public class Service {
-    private String code;
-    private String name;
-    private VATRate rate;
+    private String code = null;
+    private String name = null;
+    private VATRate rate = null;
 
     private static final String PATTERN = "^[A-Z]{4}\\d{5}";
 

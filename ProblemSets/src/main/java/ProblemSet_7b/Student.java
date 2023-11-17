@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class Student {
     private String name = null;
     private String urn = null;
-    private List<Module> moduleList;
+    private List<Module> moduleList = null;
     private static final String NAME_PATTERN = "^[A-Z][a-z]* [A-Z][a-z]*$";
     private static final String URN_PATTERN = "\\d{5}";
     public Student(String name, String urn) throws IllegalArgumentException {
@@ -34,7 +34,7 @@ public class Student {
     public int getUrn() {
         return Integer.parseInt(this.urn);
     }
-
+    //TODO: Ask about the name of parameter, it mentions m in UML and module makes more sense than module
     public void addModuleList(Module module) {
         if ((module != null) && (!this.moduleList.contains(module))) {
             this.moduleList.add(module);

@@ -4,6 +4,7 @@ public interface IGuest {
     /**
      * Creates a new Charge object with the parameters provided
      * and adds it to the list of charges.
+     *
      * @param service
      * @param cost
      */

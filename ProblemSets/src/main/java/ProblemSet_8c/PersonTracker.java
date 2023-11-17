@@ -7,32 +7,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonTracker {
-    private List<Person> peopleList;
-    private BufferedReader reader;
+    private List<Person> peopleList = null;
 
 
     public PersonTracker() {
         super();
         this.peopleList = new ArrayList<Person>();
     }
-
-    public void addPerson(String forename, String surname, int age) {
+    //TODO: Ask about the parameter name
+    public void addPerson(String forename, String surname, int age)
+            throws RuntimeException {
         this.peopleList.add(new Person(forename, surname, age));
     }
-    public void readTextFile(String file) {
+    public String readTextFile(String file) {
+        StringBuilder toReturn = new StringBuilder();
         try {
-            this.reader = new BufferedReader(new FileReader(file));
-            String line = this.reader.readLine();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
 
             while (line != null) {
                 this.breakLine(line);
-                line = this.reader.readLine();
+                toReturn.append(String.format("%s\n", line));
+                line = reader.readLine();
             }
 
-            this.reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            reader.close();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
         }
+        return toReturn.toString();
     }
 
     private void breakLine(String line) {
@@ -51,6 +54,4 @@ public class PersonTracker {
         }
         return toReturn.toString();
     }
-
-
 }
