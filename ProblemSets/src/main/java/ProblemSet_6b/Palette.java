@@ -36,7 +36,8 @@ public class Palette {
         return "No colours added";
     }
 
-    public void addColour(P_COLOUR colour) throws IllegalArgumentException, NullPointerException {
+    public void addColour(P_COLOUR colour)
+            throws IllegalArgumentException, NullPointerException {
         if (colour == null) {
             throw new NullPointerException("Null value supplied");
         }
