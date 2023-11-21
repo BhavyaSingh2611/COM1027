@@ -1,5 +1,7 @@
 package ProblemSet_6c;
 
+import java.util.Arrays;
+
 public class Palette {
 
     private P_COLOUR[] primaryColours = null;
@@ -35,19 +37,20 @@ public class Palette {
         return "No colours added";
     }
 
-    public void addColour(P_COLOUR colour) throws IllegalArgumentException {
-        boolean isAdded = false;
+    public void addColour(P_COLOUR colour) throws IllegalArgumentException, NullPointerException {
+        if (colour == null) {
+            throw new NullPointerException("Null value supplied");
+        }
+
+        if (Arrays.asList(this.primaryColours).contains(colour)) {
+            throw new IllegalArgumentException("Colour already added");
+        }
+
         for (int i = 0; i < this.primaryColours.length; i++) {
-            if (colour == this.primaryColours[i]) {
-                throw new IllegalArgumentException("Colour already added");
-            } else if (this.primaryColours[i] == null && colour != null) {
+            if (this.primaryColours[i] == null) {
                 this.primaryColours[i] = colour;
-                isAdded = true;
                 break;
             }
-        }
-        if (!isAdded) {
-            throw new IllegalArgumentException("Too many colours");
         }
     }
 
