@@ -26,7 +26,7 @@ public class Guest implements IGuest {
         this.surname = surname;
         this.address = address;
         this.telephone = telephone;
-        this.charges = new ArrayList<ProblemSet_9b.Charge>();
+        this.charges = new ArrayList<Charge>();
     }
 
     public String getSurname() {
