@@ -14,10 +14,16 @@ public class PersonTracker {
         super();
         this.peopleList = new ArrayList<Person>();
     }
-    //TODO: Ask about the parameter name
-    public void addPerson(String forename, String surname, int age)
-            throws RuntimeException {
-        this.peopleList.add(new Person(forename, surname, age));
+
+    /**
+     * Adds a Person object to person list.
+     *
+     * @param n forename
+     * @param s surname
+     * @param a age
+     */
+    public void addPerson(String n, String s, int a) {
+        this.peopleList.add(new Person(n, s, a));
     }
     public String readTextFile(String file) {
         StringBuilder toReturn = new StringBuilder();

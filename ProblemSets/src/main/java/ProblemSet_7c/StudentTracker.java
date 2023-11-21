@@ -15,12 +15,17 @@ public class StudentTracker {
         this.moduleList = new HashMap<Integer, Student>();
     }
 
-    //TODO: Ask about the parameter names
-    public void addStudent(Student student, List<Module> modules) {
-        for (Module module : modules) {
-            student.addModuleList(module);
+    /**
+     * Adds a Student object to the list of students.
+     *
+     * @param s Student
+     * @param mList Module List
+     */
+    public void addStudent(Student s, List<Module> mList) {
+        for (Module module : mList) {
+            s.addModuleList(module);
         }
-        this.studentList.add(student);
+        this.studentList.add(s);
     }
 
     private void initialiseMap() {

@@ -34,10 +34,15 @@ public class Student {
     public int getUrn() {
         return Integer.parseInt(this.urn);
     }
-    //TODO: Ask about the name of parameter, it mentions m in UML and module makes more sense than module
-    public void addModuleList(Module module) {
-        if ((module != null) && (!this.moduleList.contains(module))) {
-            this.moduleList.add(module);
+
+    /**
+     * Adds a module to the list.
+     *
+     * @param m Module
+     */
+    public void addModuleList(Module m) {
+        if ((m != null) && (!this.moduleList.contains(m))) {
+            this.moduleList.add(m);
         }
     }
 

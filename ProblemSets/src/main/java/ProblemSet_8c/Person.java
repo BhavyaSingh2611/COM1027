@@ -5,11 +5,18 @@ public class Person {
     private String surname = null;
     private int age = 0;
 
-    public Person(String forename, String surname, int age) {
+    /**
+     * Constructs a person object.
+     *
+     * @param n forename
+     * @param s surname
+     * @param a age
+     */
+    public Person(String n, String s, int a) {
         super();
-        this.forename = forename;
-        this.surname = surname;
-        this.age = age;
+        this.forename = n;
+        this.surname = s;
+        this.age = a;
     }
 
     public String getSurname() {

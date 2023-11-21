@@ -53,13 +53,12 @@ public class Guest implements IGuest {
      * Creates a new Charge object with the parameters provided
      * and adds it to the list of charges.
      *
-     * @param service
-     * @param cost
+     * @param s Service
+     * @param c Cost
      */
-    //TODO: Ask about parameter names
     @Override
-    public void addCharge(Service service, double cost) {
-        this.charges.add(new Charge(service, cost));
+    public void addCharge(Service s, double c) {
+        this.charges.add(new Charge(s, c));
     }
 
     /**
@@ -80,15 +79,14 @@ public class Guest implements IGuest {
      * Calculates sum of all VAT percentages for all the charges that
      * the guest has incurred at the specified VAT rate.
      *
-     * @param rate
+     * @param r VATRate
      * @return total of products that meet the rate provided in parameter
      */
-    //TODO: Ask about parameter names
     @Override
-    public double calculateVATChargeAtRate(VATRate rate) {
+    public double calculateVATChargeAtRate(VATRate r) {
         double total = 0;
         for (Charge charge : this.charges) {
-            if (charge.getService().getRate().equals(rate)) {
+            if (charge.getService().getRate().equals(r)) {
                 total += charge.calculateVAT();
             }
         }

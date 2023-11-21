@@ -4,10 +4,11 @@ public interface IGuest {
     /**
      * Creates a new Charge object with the parameters provided
      * and adds it to the list of charges.
-     * @param service
-     * @param cost
+     *
+     * @param s Service
+     * @param c Cost
      */
-    void addCharge(Service service, double cost);
+    void addCharge(Service s, double c);
     /**
      * Calculates total pre-VAT.
      *
@@ -18,10 +19,10 @@ public interface IGuest {
      * Calculates sum of all VAT percentages for all the charges that
      * the guest has incurred at the specified VAT rate.
      *
-     * @param rate
+     * @param r VATRate
      * @return total of products that meet the rate provided in parameter
      */
-    double calculateVATChargeAtRate(VATRate rate);
+    double calculateVATChargeAtRate(VATRate r);
     /**
      * Calculates total post-VAT.
      *
