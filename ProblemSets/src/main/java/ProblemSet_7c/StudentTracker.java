@@ -16,7 +16,8 @@ public class StudentTracker {
     }
 
     /**
-     * Adds a Student object to the list of students.
+     * Adds all the modules to the Student object and
+     * then adds the Student object to the list of students.
      *
      * @param s Student
      * @param mList Module List

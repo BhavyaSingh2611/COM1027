@@ -8,8 +8,8 @@ public class Student {
     private String name = null;
     private String urn = null;
     private List<Module> moduleList = null;
-    private static final String NAME_PATTERN = "^[A-Z][a-z]* [A-Z][a-z]*$";
-    private static final String URN_PATTERN = "\\d{5}";
+    private static final String NAME_PATTERN = "^[A-Z][a-z]* [A-Z][a-z]*";
+    private static final String URN_PATTERN = "^\\d{5}$";
     public Student(String name, String urn) throws IllegalArgumentException {
         super();
         this.moduleList = new ArrayList<Module>();
@@ -52,5 +52,10 @@ public class Student {
             toReturn.append(module.getName()).append(", ");
         }
         return toReturn.substring(0, toReturn.length() - 2);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s(%s)", this.name, this.urn);
     }
 }

@@ -42,8 +42,8 @@ public class Hotel {
 
     public String printGuestList() {
         StringBuilder toReturn = new StringBuilder();
-        toReturn.append(this.name).append(" Hotel")
-                .append("\n").append("Guest List\n");
+        toReturn.append(this.name).append(" Hotel\n")
+                .append("Guest List\n");
         for (IGuest guest : this.guests) {
             toReturn.append(guest.toString()).append("\n");
         }

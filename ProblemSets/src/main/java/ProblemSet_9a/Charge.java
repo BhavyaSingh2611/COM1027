@@ -36,9 +36,6 @@ public class Charge {
      * @return VAT calculated on the amount
      */
     public double calculateVAT() {
-        /* The first getRate returns the VATRate enum and the
-        * second one is the enum getter to get the percentage
-        */
-        return this.amount * this.service.getRate().getRate();
+        return this.amount * this.service.getRate().getPercentage();
     }
 }

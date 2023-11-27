@@ -25,7 +25,7 @@ public class PersonTracker {
     public void addPerson(String n, String s, int a) {
         this.peopleList.add(new Person(n, s, a));
     }
-    public String readTextFile(String file) {
+    public String readTextFile(String file) throws RuntimeException {
         StringBuilder toReturn = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));

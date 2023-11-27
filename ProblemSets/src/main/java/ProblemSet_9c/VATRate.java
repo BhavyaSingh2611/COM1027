@@ -12,7 +12,7 @@ public enum VATRate {
      *
      * @return percentage of VAT as double
      */
-    public double getRate() {
+    public double getPercentage() {
         return this.rate / 100;
     }
 

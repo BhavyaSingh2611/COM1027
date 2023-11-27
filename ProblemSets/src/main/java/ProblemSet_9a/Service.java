@@ -7,7 +7,7 @@ public class Service {
     private String name = null;
     private VATRate rate = null;
 
-    private static final String PATTERN = "^[A-Z]{4}\\d{5}";
+    private static final String PATTERN = "^[A-Z]{4}\\d{5}$";
 
     /**
      * Creates a service object.
@@ -16,7 +16,7 @@ public class Service {
      * @param name
      * @param rate
      * @throws NullPointerException if any parameters is null
-     * @throws IllegalArgumentException if code doesn't match "^[A-Z]{4}\\d{5}"
+     * @throws IllegalArgumentException if code doesn't match "^[A-Z]{4}\\d{5}$"
      */
     public Service(String code, String name, VATRate rate)
             throws NullPointerException, IllegalArgumentException {

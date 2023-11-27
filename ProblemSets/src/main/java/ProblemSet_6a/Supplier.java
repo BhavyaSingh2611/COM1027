@@ -7,7 +7,7 @@ public class Supplier {
 
     private String phone = null;
 
-    private static final String PATTERN = "01483\\d{6}";
+    private static final String PATTERN = "^01483\\d{6}$";
 
     public Supplier(String name, String phone) throws IllegalArgumentException {
         super();

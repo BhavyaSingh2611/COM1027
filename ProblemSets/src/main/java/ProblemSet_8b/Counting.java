@@ -29,6 +29,7 @@ public class Counting {
 
         return toReturn.toString();
     }
+    //TODO: ask about new line being in the function or in the loop?
 
     public String displayLine(String line, int counter) {
         return String.format("%s : %d\n", line, counter);

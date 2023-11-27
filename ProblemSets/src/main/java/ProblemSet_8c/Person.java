@@ -8,15 +8,15 @@ public class Person {
     /**
      * Constructs a person object.
      *
-     * @param n forename
-     * @param s surname
-     * @param a age
+     * @param name forename
+     * @param surname surname
+     * @param age age
      */
-    public Person(String n, String s, int a) {
+    public Person(String name, String surname, int age) {
         super();
-        this.forename = n;
-        this.surname = s;
-        this.age = a;
+        this.forename = name;
+        this.surname = surname;
+        this.age = age;
     }
 
     public String getSurname() {

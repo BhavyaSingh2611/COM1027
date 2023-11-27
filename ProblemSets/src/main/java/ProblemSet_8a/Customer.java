@@ -9,8 +9,11 @@ public class Customer {
     public Customer(String name, String surname)
             throws IllegalArgumentException {
 
-        if (!this.validateInfo(name) && !this.validateInfo(surname)) {
+        if (!this.validateInfo(name)) {
             throw new IllegalArgumentException("Badly formatted name");
+        }
+        if (!this.validateInfo(surname)) {
+            throw new IllegalArgumentException("Badly formatted surname");
         }
 
         this.name = name;
