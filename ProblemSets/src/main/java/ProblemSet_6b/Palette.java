@@ -50,7 +50,7 @@ public class Palette {
            if (this.primaryColours[i] == null) {
             	this.primaryColours[i] = colour;
             	break;
-            }
+           }
         }
     }
 }

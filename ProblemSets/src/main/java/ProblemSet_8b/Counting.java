@@ -39,12 +39,11 @@ public class Counting {
 
         return toReturn.toString();
     }
-    //TODO: ask about new line being in the function or in the loop?
 
     /**
      * Formats the line with the counter parameter supplied.
      *
-     * @param line line to display
+     * @param line    line to display
      * @param counter line number to display beside it
      * @return returns formatted line with line number
      */

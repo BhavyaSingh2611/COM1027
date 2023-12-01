@@ -52,7 +52,6 @@ public class Customer {
      * @param info
      * @return if info matches "^[A-Z][a-z]*" pattern
      */
-
     public boolean validateInfo(String info) {
         Pattern pattern = Pattern.compile(PATTERN);
         return pattern.matcher(info).matches();
