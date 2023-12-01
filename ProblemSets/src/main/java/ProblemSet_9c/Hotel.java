@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
+    /**
+     * Name of the hotel.
+     */
     private String name = null;
+    /**
+     * List of all the guests the hotel is catering to.
+     */
     private List<IGuest> guests = null;
 
     /**
-     *
      * @param name name of the hotel
      */
     public Hotel(String name) {

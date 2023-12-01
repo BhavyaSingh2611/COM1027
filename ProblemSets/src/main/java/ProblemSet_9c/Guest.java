@@ -4,11 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Guest implements IGuest {
-
+    /**
+     * Forename of the guest object created.
+     */
     private String forename = null;
+    /**
+     * Surname of the guest object created.
+     */
     private String surname = null;
+    /**
+     * Address of the guest object created.
+     */
     private String address = null;
+    /**
+     * Telephone of the guest object created.
+     */
     private String telephone = null;
+    /**
+     * List of the charges of the guest owe.
+     */
     private List<Charge> charges = null;
 
     /**
