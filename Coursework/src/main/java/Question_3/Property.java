@@ -17,23 +17,44 @@ public abstract class Property {
     private static final String CITY_REGEX = "^[A-Z][a-z]*";
     private static final String POSTCODE_REGEX = "GU\\d{2}[A-Z]{2}$";
 
-
-    public Property(int houseNumber, String street, String city, String postCode, int numberOfRooms)
+    /**
+     * Creates a new property.
+     *
+     * @param houseNumber   the house number
+     * @param street        the street
+     * @param city          the city
+     * @param postCode      the post code
+     * @param numberOfRooms the number of rooms in the property
+     * @throws IllegalArgumentException if the house number is less than or
+     *                                  equals 0 or if the number of rooms
+     *                                  is less than 1
+     * @throws NullPointerException     if the street, city or post code
+     *                                  is null
+     */
+    public Property(int houseNumber, String street, String city,
+                    String postCode, int numberOfRooms)
             throws IllegalArgumentException, NullPointerException {
+        super();
         if (this.nullCheck(street, city, postCode)) {
-            throw new NullPointerException("Street, city and post code must not be null");
+            throw new NullPointerException("Street, city and post code"
+                    + " must not be null");
         }
         if (houseNumber < 0) {
-            throw new IllegalArgumentException("House number should be positive");
+            throw new IllegalArgumentException("House number should"
+                    + " be positive");
         }
         if (!this.validateCity(city)) {
-            throw new IllegalArgumentException("City must start with a capital letter");
+            throw new IllegalArgumentException("City must start with"
+                    + " a capital letter");
         }
-        if (!this.validatePostCode(postCode.replace(" ", ""))) {
-            throw new IllegalArgumentException("Post code must be in the format GU00XX or GU0 0XX");
+        if (!this.validatePostCode(postCode
+                .replace(" ", ""))) {
+            throw new IllegalArgumentException("Post code must be in"
+                    + " the format GU00XX or GU0 0XX");
         }
         if (numberOfRooms < 1) {
-            throw new IllegalArgumentException("Number of rooms must be at least 1");
+            throw new IllegalArgumentException("Number of rooms must be"
+                    + " at least 1");
         }
 
         this.houseNumber = houseNumber;
@@ -45,29 +66,63 @@ public abstract class Property {
         this.complaints = new ArrayList<Complaint>();
     }
 
+    /**
+     * Adds a complaint to the property.
+     *
+     * @param complaint the complaint to add
+     */
     public void addComplaint(Complaint complaint) {
         this.complaints.add(complaint);
     }
 
+    /**
+     * Calculates the impact of all the complaints on the property.
+     *
+     * @return the impact of all the complaints on the property
+     */
     public int calculateImpact() {
         return this.complaints.stream().mapMultiToInt((complaint, consumer) ->
                 consumer.accept(complaint.getSeverity().getWeight())).sum();
     }
 
+    /**
+     * Gets the number of rooms in the property.
+     *
+     * @return the number of rooms in the property
+     */
+    public int getNumberOfRooms() {
+        return this.numberOfRooms;
+    }
+
+    /**
+     * Gets the number of rooms available in the property.
+     *
+     * @return the number of rooms available in the property
+     */
     public int getAvailableRooms() {
         return this.numberOfRooms - this.rooms.size();
     }
 
+    /**
+     * Gets the council tax for the property.
+     *
+     * @return the council tax for the property
+     */
     public double getCouncilTax() {
         return this.councilTax;
     }
 
-    public void setCouncilTax(double councilTax) {
-        int students = (int) rooms.values().stream().filter(t ->
-                t.getTenantType().equals(TenantType.STUDENT)).count();
+    /**
+     * Sets the council tax for the property.
+     *
+     * @param tax the council tax for the property
+     */
+    public void setCouncilTax(double tax) {
+        int students = (int) this.rooms.values().stream().filter(t ->
+                t.getType().equals(TenantType.STUDENT)).count();
 
-        int professional = (int) rooms.values().stream().filter(t ->
-                t.getTenantType().equals(TenantType.PROFESSIONAL)).count();
+        int professional = (int) this.rooms.values().stream().filter(t ->
+                t.getType().equals(TenantType.PROFESSIONAL)).count();
 
         double multiplier = 0;
 
@@ -76,20 +131,46 @@ public abstract class Property {
         } else if (students == 0) {
             multiplier = 1;
         }
-        this.councilTax = councilTax * multiplier;
+        this.councilTax = tax * multiplier;
     }
 
+    /**
+     * Gets the price of all the rooms in the property.
+     *
+     * @return the sum of price of all the rooms in the property
+     */
     public abstract double getPrice();
 
+    /**
+     * Checks if the property has at least one room available.
+     *
+     * @return true if there is at least one room available in the property
+     */
     public abstract boolean isAvailable();
 
-    public abstract void occupy(Room p, ITenant t);
+    /**
+     * Occupies a room in the property with a tenant.
+     *
+     * @param r the room to occupy
+     * @param t the tenant
+     * @throws IllegalArgumentException if the room is already occupied
+     *                                  or if the property is full
+     * @throws NullPointerException     if the room or tenant is null
+     */
+    public abstract void occupy(Room r, ITenant t)
+            throws IllegalArgumentException, NullPointerException;
 
+    /**
+     * Displays all the rooms and total of the property.
+     *
+     * @return string containing all the rooms and total of the property
+     */
     public abstract String displayOccupiedProperty();
 
     @Override
     public String toString() {
-        return String.format("%d %s, %s %s (%d bedroom ", this.houseNumber, this.street, this.city,
+        return String.format("%d %s, %s %s (%d bedroom ",
+                this.houseNumber, this.street, this.city,
                 this.postCode, this.numberOfRooms);
     }
 

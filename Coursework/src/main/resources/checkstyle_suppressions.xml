@@ -2,11 +2,11 @@
 <!-- Specify which style warnings may be ignored for COM1027 coursework. -->
 
 <!DOCTYPE suppressions PUBLIC
-    "-//Checkstyle//DTD SuppressionFilter Configuration 1.1//EN"
-    "https://checkstyle.org/dtds/suppressions_1_1.dtd">
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.1//EN"
+        "https://checkstyle.org/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-	<!-- JavaDoc not assessed in coursework. -->
+    <!-- JavaDoc not assessed in coursework. -->
     <suppress files="." checks="JavadocPackage"/>
     <suppress files="." checks="JavadocVariable"/>
     <suppress files="." checks="MissingJavadocType"/>
@@ -16,20 +16,23 @@
     <suppress files="." checks="HiddenField"/>
     <suppress files="." checks="FinalParameters"/>
 
+    <suppress files="." checks="VisibilityModifier"/>
+    <suppress files="." checks="RedundantModifier"/>
+    
     <!-- Permit ProblemSet_Xy package names for readability. -->
     <suppress files="." checks="PackageName"/>
-    
+
     <!-- Permit non-constant final numbers, esp. in tests for readability. -->
     <suppress files="." checks="MagicNumber"/>
-    
+
     <!-- Permit tabs due to editor unpredictability. -->
     <suppress files="." checks="FileTabCharacter"/>
 
     <!-- Permit whitepace after punctuation as not obvious. -->
     <suppress files="." checks="NoWhitespaceAfter"/>
-    
+
     <!-- Do not warn for tests. -->
-    <suppress files=".*Test.*" checks=".*" />
+    <suppress files=".*Test.*" checks=".*"/>
 </suppressions>
 
 
